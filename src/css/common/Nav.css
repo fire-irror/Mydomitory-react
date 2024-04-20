@@ -1,0 +1,17 @@
+.Nav_bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #ffffff;
+  border-top: 1px solid #898989;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 8px 0;
+}
+
+
+.Nav_bar svg:hover {
+  color: #4198FF;
+}
