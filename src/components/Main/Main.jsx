@@ -1,7 +1,8 @@
 import React from "react";
-import '../../css/Main.css'
+import '../../css/Main/Main.css'
 import teacherImg from '../../assets/teacher.svg'
 import cleanImg from '../../assets/clean.svg'
+import ViewCalendar from "./ViewCalendar";
 
 
 
@@ -26,18 +27,23 @@ export default function Main(){
         <div className="personalScore">
           <p className="score">Total :  5</p>
 
-          <div className="goodScore">
+          <div className="WrapgoodScore">
             <p className="goodScoreTitle">상점</p>
             <p className="goodScoreContent">모범 호실</p>
+            <p className="goodScore">8점</p>
           </div>
 
-          <div className="badScore">
+          <div className="WrapbadScore">
             <p className="badScoreTitle">벌점</p>
-            <div className="badScoreContent">타호실 무단 출입</div>
+            <p className="badScoreContent">타호실 무단 출입</p>
+            <p className="badScore">5점</p>
+          </div>
+
+          <div className="WrapCalendar">
+            <p className="calendarTitle">일정보기</p>
+            <ViewCalendar/>
           </div>
         </div>
-
-
       </div>
     </div>
   )

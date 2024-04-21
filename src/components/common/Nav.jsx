@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { AiOutlineHome } from "react-icons/ai";
 import { MdOutlineLocalLaundryService } from "react-icons/md";
+import { GoChecklist } from "react-icons/go";
 import { BsChatText } from "react-icons/bs";
-
-
 import { BsPerson } from "react-icons/bs";
 import { useNavigate } from 'react-router-dom';
 import '../../css/common/Nav.css'
@@ -29,10 +28,6 @@ export default function Nav() {
     }
   }, [navigate]);
 
-  const handlePlusButtonClick = () => {
-    navigate('/post');
-  }
-
   const handleMypageClick = () => {
     navigate('/mypage');
   }
@@ -53,7 +48,8 @@ export default function Nav() {
     <div className='Nav_bar'>
       <AiOutlineHome size='25' color={activeIcon === 'home' ? '#F5CA00' : '#000'} onClick={handelHomeButtonClick} />
       <MdOutlineLocalLaundryService size='28' color={activeIcon === 'search' ? '#F5CA00' : '#000'} onClick={handleSearchClick} />
-      <BsChatText size='25' color={activeIcon === 'chat' ? '#F5CA00' : '#000'} onClick={handleChatClick} />
+      <GoChecklist size='25' color={activeIcon === 'chat' ? '#F5CA00' : '#000'} onClick={handleChatClick} />
+      <BsChatText size='25' color={activeIcon === 'post' ? '#F5CA00' : '#000'} onClick={handleChatClick} />
       <BsPerson size='25' color={activeIcon === 'mypage' ? '#F5CA00' : '#000'} onClick={handleMypageClick} />
     </div>
   );

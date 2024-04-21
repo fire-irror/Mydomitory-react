@@ -2,7 +2,6 @@
 
 *{
   margin: 0;
-  padding: 0;
 }
 .MainTitle,
 .SchoolName,
@@ -11,24 +10,33 @@
 .cleaning,
 .score,
 .goodScoreTitle,
-.badScoreTitle{
+.badScoreTitle,
+.calendarTitle{
   color: #F5CA00;
   font-weight: bold;
   margin-left: 3%;
   font-family: "Noto Sans KR", sans-serif;
 }
 
+.MainTitle{
+  font-size: 20px;
+}
+
 .MainTitle,
 .SchoolName{
   margin-top: 10%;
 }
+
 .MainGreeting,
-.score{
+.score,
+.calendarTitle{
   color: black;
 }
-
+.MainGreeting{
+  font-size: 20px;
+}
 .SchoolName{
-  font-size: 10px;
+  font-size: 15px;
 }
 
 .wrapMainContent {
@@ -96,8 +104,9 @@
   padding-bottom: 0;
 }
 
-.goodScore,
-.badScore{
+.WrapgoodScore,
+.WrapbadScore{
+  position: relative;
   background-color: #fff;
   width: 218px;
   height: 26px;
@@ -107,7 +116,7 @@
   border-left: 70px solid #CAEFFF;
 }
 
-.badScore{
+.WrapbadScore{
   border-left: 70px solid #D5FAD9;
 }
 .goodScoreTitle,
@@ -123,4 +132,29 @@
 
 .badScoreTitle{
   color: #0CAB2F;
+}
+
+.goodScoreContent,
+.badScoreContent,
+.goodScore,
+.badScore {
+  position: absolute;
+  font-family: "Noto Sans KR", sans-serif;
+  top: 35%;
+  font-size: 13px;
+  transform: translateY(-35%);
+  margin-left: 3%;
+}
+
+.goodScore,
+.badScore {
+  margin-left: 85%;
+}
+
+.WrapCalendar{
+  margin-top: 20%;
+}
+
+.calendarTitle{
+  font-size: 18px;
 }
