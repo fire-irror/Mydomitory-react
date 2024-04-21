@@ -1,4 +1,14 @@
-.WrapViewCalendar{
+.WrapViewCalendar,
+.schedule{
   margin-left: 3%;
-  margin-top: 3%;
+  margin-top: 5%;
+}
+
+.schedule{
+  border-left : 1px solid #000;
+  height : 100px;
+}
+
+.schedule1{
+  margin-left: 3%;
 }

@@ -13,6 +13,13 @@ export default function ViewCalendar() {
         color={"#000"}
         enableDaysBefore={2}
       />
+
+      <div className="schedule">
+        <p className="schedule1">호실 청소</p>
+        <p className="schedule1">점호</p>
+        <p className="schedule1">점호</p>
+        <p className="schedule1">점호</p>
+      </div>
     </div>
   );
 }
