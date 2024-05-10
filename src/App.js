@@ -4,6 +4,7 @@ import JoinPage from './pages/JoinPage';
 import LoginPage from './pages/LoginPage';
 // import LaundryPage from './pages/LaundryPage';
 import MainPage from './pages/MainPage';
+import ScorePage from './pages/ScorePage';
 import SelectPage from './pages/SelectPage';
 
 function App() {
@@ -15,7 +16,7 @@ function App() {
         {/* <Route path='laundry' element={<LaundryPage/>}/>   */}
         <Route path='/login' element={<LoginPage/>}/>  
         <Route path='/join' element={<JoinPage/>}/>  
-
+        <Route path='/score' element={<ScorePage/>}/>  
       </Routes>
     </Router>
   );

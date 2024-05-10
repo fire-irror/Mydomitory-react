@@ -6,7 +6,7 @@ export default function ViewScore() {
   const navigate = useNavigate()
 
   const hanldeScore = ()=>{
-    navigate('/Score')
+    navigate('/score')
   }
   return (
     <div className="personalScore" onClick={hanldeScore}>

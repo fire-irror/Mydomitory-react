@@ -1,6 +1,6 @@
 import React from "react";
 import '../../css/Main/Main.css'
-import teacherImg from '../../assets/teacher.svg'
+import teacherImg from '../../assets/teacher.svg' 
 import cleanImg from '../../assets/clean.svg'
 import ViewCalendar from "./ViewCalendar";
 import ViewScore from "./ViewScore";
