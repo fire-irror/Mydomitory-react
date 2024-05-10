@@ -1,0 +1,43 @@
+.wrap{
+  height: 812px;
+  background-color: rgba(255, 244, 188, 0.38);
+
+}
+
+.wrapLogo{
+  text-align: center;
+  color:#FFC61B;
+  font-size: 25px;
+  font-weight: bold;
+}
+.Logo{
+  margin-top: 45%;
+}
+
+
+.wrapBtn{
+  text-align: center;
+  margin-top: 92%;
+}
+
+.LoginBtn,
+.JoinBtn{
+  width: 80%;
+  padding:4%;
+  border-radius: 10px;
+  border:none;
+  color: rgba(93, 88, 88, 0.94);
+  font-weight: bold;
+}
+
+.LoginBtn{
+  background-color: #FFC61B;
+  margin-bottom: 7%;
+}
+
+.JoinBtn{
+  background-color: rgba(255, 255, 255, 0);
+  border-color: #FFC61B;
+  border-style: solid;
+  border-width: 2px;
+}

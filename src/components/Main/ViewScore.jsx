@@ -1,10 +1,15 @@
 import React from "react"
+import { useNavigate } from "react-router"
 import '../../css/Main/ViewScore.css'
 
 export default function ViewScore() {
+  const navigate = useNavigate()
 
+  const hanldeScore = ()=>{
+    navigate('/Score')
+  }
   return (
-    <div className="personalScore">
+    <div className="personalScore" onClick={hanldeScore}>
       <p className="score">Total :  5</p>
 
       <div className="WrapgoodScore">

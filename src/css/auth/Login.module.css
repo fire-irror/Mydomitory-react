@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+.wrap{
+  text-align: center;
+  margin-top: 20%;
+}
+
+.LogoText{
+  color: #F5CA00;
+  font-weight: bold;
+  font-size: 23px;
+  margin-top: 2%;
+}
+
+.wrapText{
+  text-align: left;
+  margin-left: 8%;
+  margin-top: 15%;
+}
+
+.text{
+  font-family: "Inter", sans-serif;
+  color: rgba(0, 0, 0, 0.55);
+  font-size: 17px;
+  font-weight: bold;
+  
+}
+
+.wrapInput{
+  margin-top: 10%;
+}
+
+.email,
+.pw{
+  font-family: "Inter", sans-serif;
+  width: 80%;
+  border-radius: 10px;
+  padding: 4.5%;
+  border-style: solid;
+  border-color: rgba(0, 0, 0, 0.12);
+  font-weight: bold;
+  border-width: 3px;
+}
+
+.pw{
+  margin-top: 10%;
+}
+
+.email:focus,
+.pw:focus{
+  border-color: #F5CA00;
+  outline: none;
+}
+
+.LoginBtn{
+  color: #5D5858;
+  background-color: #F5CA00;
+  border: none;
+  border-radius: 10px;
+  width: 90%;
+  padding: 4%;
+  margin-top: 10%;
+  font-weight: bold;
+}
+
+.socalLoginText{
+  text-align: center;
+  color: rgba(0, 0, 0, 0.4);
+  font-weight: bold;
+  margin-top: 10%;
+}
