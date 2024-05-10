@@ -43,6 +43,7 @@ export default function Login() {
           <input
             className={styles.pw}
             placeholder='Password'
+            type='password'
           />
         </div>
 

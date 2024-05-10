@@ -1,0 +1,72 @@
+.wrapHeader {
+  display: flex;
+  align-items: center;
+}
+
+.backBtn{
+  padding: 5%;
+}
+.headerText{
+  margin-left: 25%;
+  font-size: 17px;
+}
+
+.wrapContent{
+  margin-left: 5%;
+}
+
+.explanationText{
+  margin-top: 10%;
+  color: rgba(0, 0, 0, 0.55);
+  font-weight: bold;
+}
+
+
+.wrapInput{
+  margin-top: 10%;
+  font-size: 14px;
+}
+.p{
+  margin-top: 8%;
+  margin-left: 2%;
+}
+
+.school,
+.name,
+.email,
+.roomNum,
+.pw,
+.checkPw{
+  width: 85%;
+  padding: 4%;
+  margin-top: 1%;
+  border-radius: 10px;
+  border-style: solid;
+  border-color: rgba(0, 0, 0, 0.20);
+}
+
+.school:focus,
+.name:focus,
+.email:focus,
+.roomNum:focus,
+.pw:focus,
+.checkPw:focus{
+  border-color: #FFC61B;
+  outline: none;
+}
+
+.checkPw{
+  margin-top: 5%;
+}
+
+.JoinBtn{
+  background-color: #FFC61B;
+  color: rgba(93, 88, 88, 0.94);
+  font-weight: bold;
+  font-size: 15px;
+  width: 95%;
+  padding: 4%;
+  border: none;
+  border-radius: 10px;
+  margin-top: 10%;
+}
