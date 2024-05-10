@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router";
+import axios from "axios";
 import Logo from '../../assets/Logo.svg'
 import styles from '../../css/auth/Login.module.css'
 import socal from '../../assets/socal.svg'
@@ -7,7 +8,22 @@ import socal from '../../assets/socal.svg'
 
 export default function Login() {
   const navigate = useNavigate()
+  const [email,setEmail] = useState("")
+  const [password, setPassword] = useState("")
 
+
+  const hanldeClickLoginBtn = async()=>{
+    const logged = {email,password}
+    try{
+      const response = await axios.post('http://localhost:8080/user/login',logged)
+      if(response.status === 200){
+        alert('로그인 성공')
+      }
+    }catch(err){
+      alert('로그인실패')
+    }
+
+  }
   const hanldeJoinUpText = () =>{
     navigate('/join')
   }
@@ -30,7 +46,7 @@ export default function Login() {
           />
         </div>
 
-        <button className={styles.LoginBtn}>로그인</button>
+        <button className={styles.LoginBtn} onClick={hanldeClickLoginBtn}>로그인</button>
 
       </div>
       <p className={styles.socalLoginText}>- on sign in with -</p>
