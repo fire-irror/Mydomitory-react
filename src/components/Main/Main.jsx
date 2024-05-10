@@ -3,7 +3,7 @@ import '../../css/Main/Main.css'
 import teacherImg from '../../assets/teacher.svg'
 import cleanImg from '../../assets/clean.svg'
 import ViewCalendar from "./ViewCalendar";
-
+import ViewScore from "./ViewScore";
 
 
 export default function Main(){
@@ -23,28 +23,12 @@ export default function Main(){
           <p className="cleaning">공동구역 청소</p>
           <p className="cleaningroom">501 - 509</p>
         </div>
-
-        <div className="personalScore">
-          <p className="score">Total :  5</p>
-
-          <div className="WrapgoodScore">
-            <p className="goodScoreTitle">상점</p>
-            <p className="goodScoreContent">모범 호실</p>
-            <p className="goodScore">8점</p>
-          </div>
-
-          <div className="WrapbadScore">
-            <p className="badScoreTitle">벌점</p>
-            <p className="badScoreContent">타호실 무단 출입</p>
-            <p className="badScore">5점</p>
-          </div>
-
-          <div className="WrapCalendar">
+          <ViewScore/>
+      </div>
+      <div className="WrapCalendar">
             <p className="calendarTitle">일정보기</p>
             <ViewCalendar/>
-          </div>
         </div>
-      </div>
     </div>
   )
 }

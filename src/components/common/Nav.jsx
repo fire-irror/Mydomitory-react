@@ -14,14 +14,14 @@ export default function Nav() {
   useEffect(() => {
 
     switch (window.location.pathname) {
-      case '/main':
-        setActiveIcon('home');
+      case '/':
+        setActiveIcon('');
         break;
       case '/post':
         setActiveIcon('plus');
         break;
-      case '/mypage':
-        setActiveIcon('mypage');
+      case '/laundry':
+        setActiveIcon('laundry');
         break;
       default:
         setActiveIcon(null);
@@ -33,11 +33,13 @@ export default function Nav() {
   }
 
   const handelHomeButtonClick = () => {
-    navigate('/main');
+    setActiveIcon('main');
+    navigate('/main')
   }
 
-  const handleSearchClick = () => {
-    setActiveIcon('search');
+  const handleLaundryClick = () => {
+    setActiveIcon('laundry');
+    navigate('laundry')
   }
 
   const handleChatClick = () => {
@@ -46,8 +48,8 @@ export default function Nav() {
 
   return (
     <div className='Nav_bar'>
-      <AiOutlineHome size='25' color={activeIcon === 'home' ? '#F5CA00' : '#000'} onClick={handelHomeButtonClick} />
-      <MdOutlineLocalLaundryService size='28' color={activeIcon === 'search' ? '#F5CA00' : '#000'} onClick={handleSearchClick} />
+      <AiOutlineHome size='25' color={activeIcon === 'main' ? '#F5CA00' : '#000'} onClick={handelHomeButtonClick} />
+      <MdOutlineLocalLaundryService size='28' color={activeIcon === 'laundry' ? '#F5CA00' : '#000'} onClick={handleLaundryClick} />
       <GoChecklist size='25' color={activeIcon === 'chat' ? '#F5CA00' : '#000'} onClick={handleChatClick} />
       <BsChatText size='25' color={activeIcon === 'post' ? '#F5CA00' : '#000'} onClick={handleChatClick} />
       <BsPerson size='25' color={activeIcon === 'mypage' ? '#F5CA00' : '#000'} onClick={handleMypageClick} />

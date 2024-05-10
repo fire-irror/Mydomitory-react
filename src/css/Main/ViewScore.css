@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+
+
+.score,
+.badScoreTitle,
+.goodScoreTitle{
+  color: #000;
+  font-weight: bold;
+  margin-left: 3%;
+  font-family: "Noto Sans KR", sans-serif;
+}
+
+.personalScore{
+  position: absolute;
+  width: 335px;
+  height: 130px;
+  background-color: rgba(245, 202, 0, 0.31);
+  margin-top: 50%;
+  margin-left: 4%;
+  border-radius: 10px;
+}
+
+.score{
+  font-size: 13px;
+  padding: 5%;
+  padding-bottom: 0;
+}
+
+.WrapgoodScore,
+.WrapbadScore{
+  position: relative;
+  background-color: #fff;
+  width: 218px;
+  height: 26px;
+  margin-left: 7%;
+  margin-top: 3%;
+  border-radius: 7px;
+  border-left: 70px solid #CAEFFF;
+}
+
+.WrapbadScore{
+  border-left: 70px solid #D5FAD9;
+}
+.goodScoreTitle,
+.badScoreTitle{
+  margin-left: -50px; 
+  font-size: 13px;
+  padding: 1%;
+}
+
+.goodScoreTitle{
+  color: #1A89EF;
+}
+
+.badScoreTitle{
+  color: #0CAB2F;
+}
+
+.goodScoreContent,
+.badScoreContent,
+.goodScore,
+.badScore {
+  position: absolute;
+  font-family: "Noto Sans KR", sans-serif;
+  top: 35%;
+  font-size: 13px;
+  transform: translateY(-35%);
+  margin-left: 3%;
+}
+
+.goodScore,
+.badScore {
+  margin-left: 85%;
+} 
