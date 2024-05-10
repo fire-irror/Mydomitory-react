@@ -47,24 +47,32 @@ export default function Join() {
           <input
             className={styles.school}
             placeholder='학교 이름'
+            value={school}
+            onChange={(e) => setSchool(e.target.value)}
           />
 
           <p className={styles.p}>이름</p>
           <input
             className={styles.name}
             placeholder='이름'
+            value={name}
+            onChange= {(e) => setName(e.target.value)}
           />
 
           <p className={styles.p}>이메일</p>
           <input
             className={styles.email}
             placeholder='이메일'
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
           />
 
           <p className={styles.p}>호수</p>
           <input
             className={styles.roomNum}
             placeholder='예) 402'
+            value={room_num}
+            onChange={(e) => setRoom_num(e.target.value)}
           />
 
           <p className={styles.p}>비밀번호</p>
@@ -72,11 +80,15 @@ export default function Join() {
             className={styles.pw}
             placeholder='비밀번호'
             type='password'
+            value={password}
+            onChange={(e)=> setPassword(e.target.value)}
           />
           <input
             className={styles.checkPw}
             placeholder='비밀번호 확인'
             type='password'
+            value={type}
+            onChange={(e) => setType(e.target.value)}
           />
         </div>
         <button className={styles.JoinBtn} onClick={handleJoinBtn}>가입하기</button>
