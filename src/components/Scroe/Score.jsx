@@ -6,7 +6,7 @@ import Bell from '../../assets/bell.svg'
 export default function Score() {
   const renderHrWrap = () => {
     const hrWraps = [];
-    for (let i = 0; i < 7; i++) {
+    for (let i = 0; i < 6; i++) {
       hrWraps.push(
         <div key={i} className={styles.wrapHr}>
           <div className={styles.tableContent}>

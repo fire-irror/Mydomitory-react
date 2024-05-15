@@ -18,9 +18,11 @@ export default function Login() {
       const response = await axios.post('http://localhost:8080/user/login',logged)
       if(response.status === 200){
         alert('로그인 성공')
+        navigate('/main')
       }
     }catch(err){
       alert('로그인실패')
+      console.log(err)
     }
 
   }
@@ -38,12 +40,16 @@ export default function Login() {
           <input
             className={styles.email}
             placeholder='Email'
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
           />
 
           <input
             className={styles.pw}
             placeholder='Password'
             type='password'
+            value={password}
+            onChange={(e)=>setPassword(e.target.value)}
           />
         </div>
 

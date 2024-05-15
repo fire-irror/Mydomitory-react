@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+*{
+  font-family: "Inter", sans-serif;
+}
+.title{
+  padding: 5%;
+  /* font-size: 17px; */
+  font-weight: bold;
+}
+
+.wrapViewLaundry{
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin-top: 7%;
+}
+.ViewLaundry1,
+.ViewLaundry2,
+.ViewLaundry3{
+  background-color: #FFEF9E;
+  width: 30%;
+  border-radius: 10px;
+  height: 190px;
+  margin-left: 2.5%;
+}
+
+.one,
+.two,
+.three{
+  border-radius: 50%;
+  background-color: #fff;
+  width: 12%;
+  text-align: center;
+  padding: 2%;
+  margin: 3%; 
+}
+
+.oneContent,
+.twoContent,
+.threeContent{
+  font-size: 14px;
+}
+
+.Laundring,
+.emptyLaundry{
+  margin-top: 13%;
+  margin-bottom: 10%;
+}
+
+.ing{
+  text-align: center;
+  margin-top: 20%;
+}
+
+.Tables{
+  text-align: center;
+  margin-top: 13%;
+}
+
+.resLaundry{
+  color: black;
+  background-color: #FFEF9E;
+  border: none;
+  width: 92%;
+  border-radius: 10px;
+  padding: 4%;
+  font-weight: bold;
+  font-size: 14px;
+  margin-top: 10%;
+}

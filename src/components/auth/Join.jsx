@@ -24,9 +24,11 @@ export default function Join() {
   const handleJoinBtn = async() =>{
     const Joined = {school,name,email,room_num,password,type}
     try{
-      const response = await axios.post('http://localhost:8080/user',Joined)
-      if(response.status === 200)
+      const response = await axios.post('http://localhost:8080/user/signup',Joined)
+      if(response.status === 200){
         alert('회원가입 성공')
+        nav('/login')
+      }
     }catch(err){
       alert('실패')
       console.log(err)

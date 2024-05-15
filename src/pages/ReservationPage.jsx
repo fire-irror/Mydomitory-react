@@ -1,15 +1,14 @@
 import React from "react";
 import Nav from "../components/common/Nav";
-import Laundry from "../components/Laundry/Laundry";
 import LaundryHeader from "../components/Laundry/LaundryHeader";
+import Reservation from '../components/Reservation/Reservation'
 
 
-export default function LaundryPage(){
-
+export default function ReservationPage(){
   return(
     <div>
       <LaundryHeader/>
-      <Laundry/>
+      <Reservation/>
       <Nav/>
     </div>
   )

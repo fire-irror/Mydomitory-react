@@ -11,35 +11,17 @@ export default function Nav() {
   const [activeIcon, setActiveIcon] = useState(null);
   const navigate = useNavigate();
 
-  useEffect(() => {
-
-    switch (window.location.pathname) {
-      case '/':
-        setActiveIcon('');
-        break;
-      case '/post':
-        setActiveIcon('plus');
-        break;
-      case '/laundry':
-        setActiveIcon('laundry');
-        break;
-      default:
-        setActiveIcon(null);
-    }
-  }, [navigate]);
 
   const handleMypageClick = () => {
     navigate('/mypage');
   }
 
   const handelHomeButtonClick = () => {
-    setActiveIcon('main');
     navigate('/main')
   }
 
   const handleLaundryClick = () => {
-    setActiveIcon('laundry');
-    navigate('laundry')
+    navigate('/laundry')
   }
 
   const handleChatClick = () => {

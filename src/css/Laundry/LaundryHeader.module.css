@@ -1,0 +1,15 @@
+.container{
+  display: flex;
+  align-items: center;
+}
+
+.title{
+  color: #F5CA00;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 5%;
+}
+
+.bell{
+  margin-left: 67.5%;
+}
