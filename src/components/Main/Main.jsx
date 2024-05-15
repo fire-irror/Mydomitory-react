@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import '../../css/Main/Main.css'
 import teacherImg from '../../assets/teacher.svg' 
 import cleanImg from '../../assets/clean.svg'
@@ -7,11 +7,25 @@ import ViewScore from "./ViewScore";
 
 
 export default function Main(){
+  const [username, setUsername] = useState('')
+  const [schoolName, setSchoolName] = useState('') // 추가된 부분: 사용자의 학교 이름을 저장할 state
+
+  useEffect(()=>{
+    const user = localStorage.getItem('username')
+    const school = localStorage.getItem('schoolName') // 로컬 스토리지에서 학교 이름을 불러옴
+    if(user){
+      setUsername(user);
+    }
+    if(school){
+      setSchoolName(school);
+    }
+  },[])
+
   return(
     <div className="Main">
       <p className="MainTitle">HOME</p>
-      <p className="SchoolName">미림마이스터고</p>
-      <p className="MainGreeting">안녕하세요,김미림님!</p>
+      <p className="SchoolName">{schoolName}</p>
+      <p className="MainGreeting">안녕하세요,{username}님!</p>
       <div className="wrapMainContent">
         <div className="teacher">
         <img src={teacherImg} className="teacherImg"/>
