@@ -27,8 +27,6 @@ export default function Join() {
       const response = await axios.post('http://localhost:8080/user/signup',Joined)
       if(response.status === 200){
         alert('회원가입 성공')
-        localStorage.setItem('username',response.data.name);
-        localStorage.setItem('schoolName',response.data.school);
         nav('/login')
       }
     }catch(err){
