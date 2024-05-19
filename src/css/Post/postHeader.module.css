@@ -1,0 +1,12 @@
+
+.wrap{
+  display: flex;
+  text-align: center;
+  padding: 2vh;
+}
+
+.title{
+  margin-left: 29vw;
+  font-weight: bold;
+}
+

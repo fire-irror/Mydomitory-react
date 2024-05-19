@@ -1,0 +1,66 @@
+.content{
+  padding: 2.5vh;
+  margin-top: 3vh;
+}
+
+
+.input{
+  width: 88vw;
+  height: 5vh;
+  border-radius: 1.5vh;
+  border: 2px solid #9d9d9d8b;
+}
+
+.input:focus,
+.textarea:focus,
+.select:focus{
+  border-color: #FFC61B;
+  outline: none;
+}
+
+.textarea{
+  width: 82.5vw;
+  resize: none;
+  height: 35vh;
+  border-radius: 1.5vh;
+  border: 2px solid #9d9d9d8b;
+  padding: 1.5vh;
+}
+
+.select{
+  width: 30vw;
+  height: 5vh;
+  border-radius: 1.2vh;
+  font-size: 15px;
+  padding: 1vh;
+  border: 2px solid #9d9d9d8b;
+}
+
+.inputSelect,
+.inputContent{
+  margin-top: 3vh;
+}
+
+.input::placeholder{
+  padding: 1vh;
+}
+
+.inputTitle,
+.inputSelect,
+.inputContent{
+  margin-bottom: 0.5vh;
+  margin-left: 1vw;
+  font-size: 15px;
+}
+
+.btn{
+  border-radius: 1.5vh;
+  width: 90vw;
+  height: 6vh;
+  background-color: #FFC61B;
+  color: #fff;
+  font-weight: bold;
+  font-size: 15px;
+  border: none;
+  margin-top: 8vh;
+}
