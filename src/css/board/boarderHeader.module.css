@@ -2,13 +2,14 @@
   display: flex;
   align-items: center;
 }
+
 .bell{
-  margin-left: 68.5vw;
+  margin-left: 64vw;
 }
+
 .title{
   color: #F5CA00;
   font-size: 20px;
   font-weight: bold;
-  padding: 5%;
+  padding: 4.5%;
 }
-

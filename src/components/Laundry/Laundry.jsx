@@ -4,14 +4,12 @@ import Laundring from '../../assets/Laundring.svg'
 import emptyLaundry from '../../assets/emptyLaundry.svg'
 import Table from '../../assets/LaundryTable.svg'
 import { useNavigate } from "react-router";
+import LaundryBtn from "./LaundryBtn";
 
 
 export default function Laundry() {
   const navigate = useNavigate()
 
-  const handleresLaundry = () =>{
-    navigate('/reservation')
-  }
 
   return (
     <div className={styles.container}>
@@ -39,7 +37,7 @@ export default function Laundry() {
       </div>
       <div className={styles.Tables}>
         <img src={Table} className={styles.table} />
-        <button className={styles.resLaundry} onClick={handleresLaundry}>세탁 신청하기</button>
+        <LaundryBtn/>
       </div>
     </div>
   )

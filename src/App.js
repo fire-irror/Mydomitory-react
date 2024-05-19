@@ -7,6 +7,8 @@ import MainPage from './pages/MainPage';
 import ScorePage from './pages/ScorePage';
 import SelectPage from './pages/SelectPage';
 import ReservationPage from './pages/ReservationPage';
+import BoardPage from './pages/BoardPage';
+import PostPage from './pages/PostPage';
 
 function App() {
   return (
@@ -19,6 +21,10 @@ function App() {
         <Route path='/join' element={<JoinPage/>}/>  
         <Route path='/score' element={<ScorePage/>}/>  
         <Route path='/reservation' element={<ReservationPage/>}/>  
+        <Route path='/board' element={<BoardPage/>}/>  
+        <Route path='/post' element={<PostPage/>}/>  
+
+
       </Routes>
     </Router>
   );

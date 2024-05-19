@@ -1,0 +1,18 @@
+.container{
+  /* background-color: aqua; */
+}
+
+
+.btn{
+  background-color: #FFC61B;
+  color: #fff;
+  padding: 1.5vh;
+  border: none;
+  box-shadow: 0px 5px 5px -2px gray;
+  z-index: 10;
+  border-radius: 1vh;
+  font-weight: 600;
+  font-size: 2vh;
+  margin-top: 79.5vh;
+  margin-left: 75vw;
+}
