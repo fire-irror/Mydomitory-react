@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+body{
+  font-family: "Noto Sans", sans-serif;
+}
+.container{
+  padding: 2vh;
+}
+
+.wrapContent{
+  display: flex;
+  text-align: center;
+}
+
+.logo{
+  height: 4vh;
+}
+
+.title{
+  margin-top: 0.5vh;
+  font-size: 20px;
+  font-weight: bold;
+  color: #F5CA00;
+  margin-left: 3vw;
+}
+
+
+.profileInfo,
+.wrapBtn{
+  text-align: center;
+  margin-top: 1vh;
+}
+
+.roomNum{
+  background-color: #F5CA00;
+  color: #fff;
+  width: 15vw;
+  padding: 1.5vw;
+  font-size: 11px;
+  border-radius: 10vh;
+  margin-left: 17vh;
+  margin-top: 1vh;
+}
+
+.name{
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.profileImg{
+  background-color: #F5CA00;
+  width: 25vw;
+  height: 11.5vh;
+  border-radius: 30%;
+  text-align: center;
+  margin-left: 33vw;
+  margin-top: 10vh;
+  display: flex;
+}
+
+.img{
+  text-align: center;
+  width: 15vw;
+  margin-left: 2.3vh;
+}
+
+.editBtn{
+  margin-top: 17vw;
+}
+
+.roomInfo,
+.score{
+  width: 85vw;
+  background-color: #fff;
+  border: solid 1.5px#FFC61B;
+  border-radius: 1vh;
+  padding: 4vw;
+  margin-top: 2vh;
+  font-size: 14px;
+}
+
+.roomInfo{
+  margin-top: 3vh;
+}
+
+.wrapInfo{
+  background-color: #ededed;
+  width: 85vw;
+  height: 25vh;
+  margin-left: 3vw;
+  margin-top: 3vh;
+  border-radius: 1vh;
+}

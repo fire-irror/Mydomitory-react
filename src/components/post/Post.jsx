@@ -6,23 +6,25 @@ import axios from "axios";
 
 
 export default function Post() {
-  const [userId, setUserId] = useState('')
+  const [type,setType] = useState('')
   const [title,setTitle] = useState('')
   const [content, setContent] = useState('')
+  const userId = 1;
 
   const handlePostBtn = async() =>{
     const posted = {
       userId: userId,
       title: title,
-      content: content
+      content: content,
+      type: type
     }
     try{
       const response = await axios.post('http://localhost:8080/board',posted)
-      if(response.status === 200){
+      if(response.status === 201){
         alert('게시되었습니다');
       }
     }catch(e){
-      console.log(e)
+      console.error(e)
     }
   }
   const categories = [
@@ -39,11 +41,12 @@ export default function Post() {
           placeholder="제목을 입력하세요"
           className={styles.input}
           value={title}
-          onChange={(e) => setTitle(e.target.vaule)}
+          onChange={(e) => setTitle(e.target.value)}
         />
 
         <p className={styles.inputSelect}>카테고리</p>
-        <select className={styles.select}>
+        <select className={styles.select} value={type} onChange={(e)=>setType(e.target.value)}>
+          
           {categories.map((category, index) => (
             <option key={index} value={category}>
               {category}

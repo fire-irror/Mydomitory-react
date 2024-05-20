@@ -5,10 +5,11 @@
 
 
 .input{
-  width: 88vw;
+  width: 86vw;
   height: 5vh;
   border-radius: 1.5vh;
   border: 2px solid #9d9d9d8b;
+  padding-left: 1vh;
 }
 
 .input:focus,
@@ -41,9 +42,6 @@
   margin-top: 3vh;
 }
 
-.input::placeholder{
-  padding: 1vh;
-}
 
 .inputTitle,
 .inputSelect,
