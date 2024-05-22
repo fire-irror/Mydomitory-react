@@ -6,10 +6,12 @@ import cleanImg from '../../assets/clean.svg'
 import ViewCalendar from "./ViewCalendar";
 import ViewScore from "./ViewScore";
 
-
 export default function Main() {
   const [userData, setUserData] = useState(null)
+  const [todayTeacher, setTodayTeacher] = useState(null)
+  const [cleaningRange, setCleaningRange] = useState({ start: null, end: null })
 
+  //사용자 정보에서 이름, 학교 가져오는 get
   useEffect(() => {
     const userId = 1;
     axios.get(`http://localhost:8080/user/${userId}`).then(response => {
@@ -18,8 +20,30 @@ export default function Main() {
       .catch(e => {
         console.error(e)
       })
-  })
+  }, [])
 
+  //오늘의 사감선생님 가져오는 get
+  useEffect(() => {
+    axios.get('http://localhost:8080/public/housemaster/today').then(response => {
+      setTodayTeacher(response.data[0])
+    })
+      .catch(e => {
+        console.error(e)
+      })
+  }, [])
+
+  //오늘의 청소 당번 가져오는 get
+  useEffect(() => {
+    axios.get('http://localhost:8080/public/cleaning/today').then(response => {
+      const data = response.data;
+      if (data && data.length > 0) {
+        setCleaningRange({ start: data[0], end: data[data.length - 1] })
+      }
+    })
+      .catch(e => {
+        console.error(e)
+      })
+  }, [])
 
   return (
     <div className="Main">
@@ -27,7 +51,7 @@ export default function Main() {
       {userData ? (
         <div>
           <p className="SchoolName">{userData.school}</p>
-          <p className="MainGreeting">안녕하세요,{userData.name}님!</p>
+          <p className="MainGreeting">안녕하세요, {userData.name}님!</p>
         </div>
       ) : (
         <p>Loading...</p>
@@ -37,12 +61,20 @@ export default function Main() {
         <div className="teacher">
           <img src={teacherImg} className="teacherImg" />
           <p className="TodayTeacher">오늘의 사감쌤</p>
-          <p className="TeacherA">김미림 선생님</p>
+          {todayTeacher ? (
+            <p className="TeacherA">{todayTeacher.teacherName} 선생님</p>
+          ) : (
+            <p>Loading...</p>
+          )}
         </div>
         <div className="clean">
           <img src={cleanImg} className="cleanImg" />
           <p className="cleaning">공동구역 청소</p>
-          <p className="cleaningroom">501 - 509</p>
+          {cleaningRange.start && cleaningRange.end ? (
+            <p className="cleaningroom">{cleaningRange.start.roomNum} - {cleaningRange.end.roomNum}</p>
+          ) : (
+            <p>Loading...</p>
+          )}
         </div>
         <ViewScore />
       </div>

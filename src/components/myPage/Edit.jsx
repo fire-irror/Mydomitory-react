@@ -1,7 +1,8 @@
 import styles from '../../css/myPage/edit.module.css'
 import profile from '../../assets/mypage.svg'
 import React, { useState, useRef } from "react";
-
+import EditHeader from './EditHeader';
+import editBtn from '../../assets/editBtn.svg'
 
 export default function Edit() {
   const [imageURL, setImageURL] = useState(null);
@@ -16,8 +17,10 @@ export default function Edit() {
   const handleUploadButtonClick = () => {
     fileInputRef.current.click();
   };
+
   return (
     <div>
+      <EditHeader />
       <div className={styles.profile}>
         <div className={styles.profileImageContainer}>
           {imageURL ? (
@@ -34,7 +37,19 @@ export default function Edit() {
             onChange={handleFileInputChange}
           />
         </div>
+        <img src={editBtn} className={styles.editBtn} onClick={handleUploadButtonClick} />
+      </div>
+      
+      <div className={styles.wrapContent}>
+        <p className={styles.email}>이메일</p>
+        <input className={styles.emailInput}/>
+        <p className={styles.name}>이름</p>
+        <input className={styles.nameInput}/>
+        <p className={styles.roomNum}>호실</p>
+        <input className={styles.roomInput}/>
+        <p className={styles.perInfo}>내 정보</p>
+        <input className={styles.infoInput}/>
       </div>
     </div>
-  )
+  );
 }

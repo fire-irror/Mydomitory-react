@@ -29,14 +29,22 @@ export default function MyPage() {
     nav('/edit');
   };
 
+  const handleIconClick = (path) => {
+    nav(path);
+  };
+
   const icons = [
-    { icon: <BiMessageDetail size={30} />, text: '게시판' },
-    { icon: <MdOutlineLocalLaundryService size={30} />, text: '세탁' },
-    { icon: <IoSettingsOutline size={30} />, text: '설정' },
-    { icon: <HiOutlineQuestionMarkCircle size={30} />, text: '도움말' },
-    { icon: <MdOutlineHeadset size={30} />, text: '고객센터' },
-    { icon: <BsFillPersonXFill size={30} />, text: '로그아웃' },
+    { icon: <BiMessageDetail size={30} />, text: '게시판', path: '/board' },
+    { icon: <MdOutlineLocalLaundryService size={30} />, text: '세탁', path: '/laundry' },
+    { icon: <IoSettingsOutline size={30} />, text: '설정', path: '/settings' },
+    { icon: <HiOutlineQuestionMarkCircle size={30} />, text: '도움말', path: '/faq' },
+    { icon: <MdOutlineHeadset size={30} />, text: '고객센터', path: '/support' },
+    { icon: <BsFillPersonXFill size={30} />, text: '로그아웃', path: '/logout' },
   ];
+
+  const handleScore = () => {
+    nav('/score');
+  };
 
   return (
     <div className={styles.container}>
@@ -56,13 +64,17 @@ export default function MyPage() {
 
       <div className={styles.wrapBtn}>
         <button className={styles.roomInfo}>내 호실 정보</button>
-        <button className={styles.score}>상벌점 보러가기</button>
+        <button className={styles.score} onClick={handleScore}>상벌점 보러가기</button>
       </div>
 
       <div className={styles.wrapInfo}>
         <div className={styles.wrapIcon}>
           {icons.map((item, index) => (
-            <div key={index} className={styles.iconContainer}>
+            <div
+              key={index}
+              className={styles.iconContainer}
+              onClick={() => handleIconClick(item.path)}
+            >
               {item.icon}
               <p className={styles.iconText}>{item.text}</p>
             </div>
