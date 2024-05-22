@@ -9,7 +9,7 @@ import ViewScore from "./ViewScore";
 export default function Main() {
   const [userData, setUserData] = useState(null)
   const [todayTeacher, setTodayTeacher] = useState(null)
-  const [cleaningRange, setCleaningRange] = useState({ start: null, end: null })
+  const [roomNum, setRoomNum] = useState({ start: null, end: null })
 
   //사용자 정보에서 이름, 학교 가져오는 get
   useEffect(() => {
@@ -37,7 +37,7 @@ export default function Main() {
     axios.get('http://localhost:8080/public/cleaning/today').then(response => {
       const data = response.data;
       if (data && data.length > 0) {
-        setCleaningRange({ start: data[0], end: data[data.length - 1] })
+        setRoomNum({ start: data[0], end: data[data.length - 1] })
       }
     })
       .catch(e => {
@@ -70,8 +70,8 @@ export default function Main() {
         <div className="clean">
           <img src={cleanImg} className="cleanImg" />
           <p className="cleaning">공동구역 청소</p>
-          {cleaningRange.start && cleaningRange.end ? (
-            <p className="cleaningroom">{cleaningRange.start.roomNum} - {cleaningRange.end.roomNum}</p>
+          {roomNum.start && roomNum.end ? (
+            <p className="cleaningroom">{roomNum.start.roomNum} - {roomNum.end.roomNum}</p>
           ) : (
             <p>Loading...</p>
           )}

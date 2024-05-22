@@ -1,31 +1,41 @@
-import React from "react";
-import styles from '../../css/Score/Score.module.css'
+import React, { useState, useEffect } from "react";
+import styles from '../../css/Score/Score.module.css';
 import ViewScore from "../Main/ViewScore";
-import Bell from '../../assets/bell.svg'
+import Bell from '../../assets/bell.svg';
+import axios from "axios";
 
 export default function Score() {
+  const [personalScores, setPersonalScores] = useState([]);
+  const userId = 1;
+
+  useEffect(() => {
+    axios.get(`http://localhost:8080/personal/${userId}`)
+      .then(response => {
+        setPersonalScores(response.data);
+      })
+      .catch(e => {
+        console.error(e);
+      });
+  }, [userId]);
+
   const renderHrWrap = () => {
-    const hrWraps = [];
-    for (let i = 0; i < 6; i++) {
-      hrWraps.push(
-        <div key={i} className={styles.wrapHr}>
-          <div className={styles.tableContent}>
-            <p className={styles.p1}>6.14</p>
-            <p className={styles.p2}>모범호실</p>
-            <p className={styles.p3}>+1</p>
-          </div>
-          <hr className={styles.hr} />
+    return personalScores.map((score, index) => (
+      <div key={index} className={styles.wrapHr}>
+        <div className={styles.tableContent}>
+          {/* <p className={styles.p1}>{score.score}</p> */}
+          <p className={styles.p2}>{score.content}</p>
+          <p className={styles.p3}>{score.score}</p>
         </div>
-      );
-    }
-    return hrWraps;
+        <hr className={styles.hr} />
+      </div>
+    ));
   };
 
   return (
     <div className={styles.container}>
       <div className={styles.header}>
         <p className={styles.title}>상벌점</p>
-        <img src={Bell} className={styles.Bell} />
+        <img src={Bell} className={styles.Bell} alt="bell icon" />
         <ViewScore />
       </div>
 
@@ -34,7 +44,7 @@ export default function Score() {
         <p className={styles.moreView}>더보기</p>
       </div>
       <hr className={styles.headerHr} />
-      {renderHrWrap()}
+      {personalScores.length > 0 ? renderHrWrap() : <p>데이터가 없습니다.</p>}
     </div>
   );
 }
