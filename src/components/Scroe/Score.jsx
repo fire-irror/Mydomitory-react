@@ -8,6 +8,7 @@ export default function Score() {
   const [personalScores, setPersonalScores] = useState([]);
   const userId = 1;
 
+  //사용자의 모든 상벌점 내용을 가져오는 get  
   useEffect(() => {
     axios.get(`http://localhost:8080/personal/${userId}`)
       .then(response => {

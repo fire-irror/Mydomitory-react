@@ -1,55 +1,42 @@
-import React from "react"
-import { useNavigate } from "react-router"
-import { useState, useEffect } from "react"
-import '../../css/Main/ViewScore.css'
-import axios from "axios"
+import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router";
+import '../../css/Main/ViewScore.css';
+import axios from "axios";
 
 export default function ViewScore() {
-  const navigate = useNavigate()
-  const [personal, setPersonal] = useState(null)
-  const [award, setAward] = useState(null)
-  const [penalties, setPenalties] = useState(null)
-
-  const hanldeScore = () => {
-    navigate('/score')
-  }
+  const navigate = useNavigate();
+  const [personal, setPersonal] = useState(null);
+  const [award, setAward] = useState(null);
+  const [penalties, setPenalties] = useState(null);
   const userId = 1;
 
-  //사용자 상벌점 총점을 가져오는 get
-  useEffect(() => {
-    axios.get(`http://localhost:8080/personal/total/${userId}`).then(response => {
-      setPersonal(response.data)
-    })
-      .catch(e => {
-        console.error(e)
-      })
-  })
+  const hanldeScore = () => {
+    navigate('/score');
+  };
 
-  //사용자의 상점을 가져오는 get
   useEffect(() => {
-    axios.get(`http://localhost:8080/personal/award/${userId}`).then(response => {
-      const data = response.data
-      setAward(data[data.length - 1])
-    })
-      .catch(e => {
-        console.error(e)
-      })
-  })
+    const fetchData = async () => {
+      try {
+        const [totalResponse, awardResponse, penaltiesResponse] = await Promise.all([
+          axios.get(`http://localhost:8080/personal/total/${userId}`),
+          axios.get(`http://localhost:8080/personal/award/${userId}`),
+          axios.get(`http://localhost:8080/personal/penalties/${userId}`)
+        ]);
 
-  //사용자의 벌점을 가져오는 get
-  useEffect(() => {
-    axios.get(`http://localhost:8080/personal/penalties/${userId}`).then(response => {
-      const data = response.data
-      setPenalties(data[data.length - 1])
-    })
-      .catch(e => {
-        console.error(e)
-      })
-  })
+        setPersonal(totalResponse.data);
+        setAward(awardResponse.data[awardResponse.data.length - 1]);
+        setPenalties(penaltiesResponse.data[penaltiesResponse.data.length - 1]);
+      } catch (e) {
+        console.error(e);
+      }
+    };
+
+    fetchData();
+  }, [userId]);
 
   return (
     <div className="personalScore" onClick={hanldeScore}>
-      <p className="score">Total :  {personal}</p>
+      <p className="score">Total: {personal}</p>
 
       <div className="WrapgoodScore">
         <p className="goodScoreTitle">상점</p>
@@ -59,9 +46,8 @@ export default function ViewScore() {
             <p className="goodScore">{award.score}점</p>
           </>
         ) : (
-          <p>loading</p>
+          <p>Loading...</p>
         )}
-
       </div>
 
       <div className="WrapbadScore">
@@ -72,10 +58,9 @@ export default function ViewScore() {
             <p className="badScore">{penalties.score}점</p>
           </>
         ) : (
-          <p>Loading</p>
+          <p>Loading...</p>
         )}
-
       </div>
     </div>
-  )
+  );
 }
