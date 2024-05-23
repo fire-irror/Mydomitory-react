@@ -8,7 +8,7 @@ export default function Score() {
   const [personalScores, setPersonalScores] = useState([]);
   const userId = 1;
 
-  //사용자의 모든 상벌점 내용을 가져오는 get  
+  // 사용자의 모든 상벌점 내용을 가져오는 get  
   useEffect(() => {
     axios.get(`http://localhost:8080/personal/${userId}`)
       .then(response => {
@@ -19,11 +19,21 @@ export default function Score() {
       });
   }, [userId]);
 
+  // 날짜를 년, 월, 일로 분리하는 함수
+  const formatDate = (dateString) => {
+    const dateObj = new Date(dateString);
+    const year = dateObj.getFullYear();
+    // 월은 0부터 시작하므로 1을 더함
+    const month = dateObj.getMonth() + 1; 
+    const day = dateObj.getDate();
+    return `${year}.${month < 10 ? `0${month}` : month}.${day < 10 ? `0${day}` : day}`;
+  };
+
   const renderHrWrap = () => {
     return personalScores.map((score, index) => (
       <div key={index} className={styles.wrapHr}>
         <div className={styles.tableContent}>
-          {/* <p className={styles.p1}>{score.score}</p> */}
+          <p className={styles.p1}>{formatDate(score.date)}</p>
           <p className={styles.p2}>{score.content}</p>
           <p className={styles.p3}>{score.score}</p>
         </div>
@@ -41,7 +51,7 @@ export default function Score() {
       </div>
 
       <div className={styles.table}>
-        <p className={styles.tableYear}>2024</p>
+        <p className={styles.tableYear}></p>
         <p className={styles.moreView}>더보기</p>
       </div>
       <hr className={styles.headerHr} />

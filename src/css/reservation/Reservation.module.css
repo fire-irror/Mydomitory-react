@@ -1,8 +1,93 @@
 
 .container{
   padding: 5%;
+
 }
 
 .title{
   font-weight: bold;
+}
+
+.LaundryResTable{
+  margin-top: 4vh;
+}
+
+.ResBtn{
+  background-color: #FFEF9E;
+  border: none;
+  width: 89vw;
+  padding: 1.6vh;
+  text-align: center;
+  border-radius: 1vh;
+  margin-top: 2.5vh;
+  font-weight: bold;
+}
+
+.wrapBtn{
+}
+
+.b1,
+.b2,
+.b3,
+.b4,
+.b5,
+.b6,
+.b7,
+.b8,
+.b9,
+.b10,
+.b11,
+.b12{
+  position: absolute;
+  height: 12vh;
+  width: 18vw;
+  border-radius: 1vh;
+  border: none;
+  background-color: #079b2700;
+}
+
+.b1,
+.b2,
+.b3,
+.b4,
+.b7,
+.b10{
+  top: 23.5vh;
+  margin-left: 22vw;
+}
+
+.b2,
+.b5,
+.b8,
+.b11{
+  margin-left: 45.2vw;
+}
+
+.b3,
+.b6,
+.b9,
+.b12{
+  margin-left: 68.5vw;
+}
+
+.b4,
+.b5,
+.b6{
+  top: 37.5vh;
+}
+
+.b7,
+.b8,
+.b9{
+  top: 52vh;
+}
+
+.b10,
+.b11,
+.b12{
+  top: 67vh;
+}
+
+.active {
+  background-color: #079B28; 
 }
