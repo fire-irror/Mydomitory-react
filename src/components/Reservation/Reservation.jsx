@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import styles from '../../css/reservation/Reservation.module.css';
 import LaundryResTable from '../../assets/LaundryResTable.svg';
+import { useNavigate } from "react-router";
 import axios from "axios";
 
 export default function Reservation() {
@@ -9,6 +10,7 @@ export default function Reservation() {
   const [activeButton, setActiveButton] = useState(null);
   const [userData, setUserData] = useState(null);
   const userId = 1;
+  const nav = useNavigate()
 
   useEffect(() => {
     axios.get(`http://localhost:8080/user/${userId}`)
@@ -45,6 +47,7 @@ export default function Reservation() {
       const response = await axios.post('http://localhost:8080/laundry', postData);
       if (response.status === 200) {
         alert("성공");
+        nav('/laundry')
       }
     } catch (e) {
       alert('실패');
