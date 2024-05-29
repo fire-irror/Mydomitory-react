@@ -9,7 +9,7 @@ export default function Reservation() {
   const buttons = Array.from({ length: buttonCount }, (_, i) => i + 1);
   const [activeButton, setActiveButton] = useState(null);
   const [userData, setUserData] = useState(null);
-  const [laundryRes, setLaundryRes] = useState(null);
+  // const [laundryRes, setLaundryRes] = useState(null);
   const userId = 1;
   const nav = useNavigate()
 
@@ -22,12 +22,12 @@ export default function Reservation() {
         console.error(e);
       });
       
-    axios.get(`http://localhost:8080/laundry/${userId}`).then(response => {
-      setLaundryRes(response.data[0])
-    })
-      .catch(e => {
-        console.error(e);
-      });
+    // axios.get(`http://localhost:8080/laundry/${userId}`).then(response => {
+    //   setLaundryRes(response.data[0])
+    // })
+    //   .catch(e => {
+    //     console.error(e);
+    //   });
   }, [userId]);
 
   // 사용자가 세탁기를 클릭할 때의 핸들러
@@ -94,7 +94,7 @@ export default function Reservation() {
   return (
     <div className={styles.container}>
       <p className={styles.title}>세탁 일지</p>
-      {laundryRes && <p>{`세탁기 번호: ${laundryRes.washer_num}, 세탁 시간: ${laundryRes.wash_time}`}</p>}
+      {/* {laundryRes && <p>{`세탁기 번호: ${laundryRes.washer_num}, 세탁 시간: ${laundryRes.wash_time}`}</p>} */}
       <img src={LaundryResTable} className={styles.LaundryResTable} alt="Laundry Reservation Table" />
       <button className={styles.ResBtn} onClick={handleResBtn}>세탁 신청하기</button>
 

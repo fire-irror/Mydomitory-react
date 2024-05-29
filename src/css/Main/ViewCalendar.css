@@ -1,6 +1,5 @@
 .WrapViewCalendar,
 .schedule{
-  margin-left: 3%;
   margin-top: 5%;
 }
 
@@ -11,4 +10,18 @@
 
 .schedule1{
   margin-left: 3%;
+}
+
+.DatePicker_button__ob8dZ{
+  display: none;
+} 
+
+.DatePicker_monthYearLabel__IRVSg{
+  display: none;
+}
+
+.DatePicker_dateDayItem__sT2yQ{
+  width: 11.3vw;
+  padding-bottom: 0.5vh;
+  padding-top: 0.5vh;
 }

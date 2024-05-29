@@ -11,7 +11,7 @@ export default function ViewCalendar() {
       <DatePicker
         getSelectedDay={selectedDay}
         color={"#000"}
-        enableDaysBefore={2}
+        enableDaysBefore={7}
       />
 
       <div className="schedule">
