@@ -33,3 +33,10 @@
 .p4{
   margin-right: 0;
 }
+
+.p1.active,
+.p2.active,
+.p3.active,
+.p4.active {
+  color:#F5CA00 ; 
+}

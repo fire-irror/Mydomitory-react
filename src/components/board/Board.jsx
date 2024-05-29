@@ -4,43 +4,54 @@ import BoarderHeader from "./BoarderHeader";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
-
 export default function Board() {
   const nav = useNavigate()
-  const [post, setPost] = useState([])
+  const [posts, setPosts] = useState([]);
+  const [filteredPosts, setFilteredPosts] = useState([]);
 
-  useEffect(()=>{
-    getPost()
-  },[])
+  useEffect(() => {
+    getPosts();
+  }, []);
 
-  const getPost = async () => {
+  const getPosts = async () => {
     try {
-      const response = await axios.get('http://localhost:8080/board')
-      setPost(response.data)
+      const response = await axios.get('http://localhost:8080/board');
+      setPosts(response.data);
+      setFilteredPosts(response.data); // 초기에는 모든 게시글을 보여줍니다.
     } catch (e) {
-      console.error(e)
+      console.error(e);
     }
-  }
+  };
+
   const handleBtn = () => {
-    nav('/post')
-  }
+    nav('/post');
+  };
+
+  const handleFilterChange = (filter) => {
+    if (filter === '전체') {
+      // 모든 게시글을 보여주기
+      setFilteredPosts(posts); 
+    } else {
+      const filtered = posts.filter(post => post.type === filter); // 해당 필터에 해당하는 게시글만 필터링합니다.
+      setFilteredPosts(filtered);
+    }
+  };
+
   return (
     <div className={styles.container}>
-      <BoarderHeader />
-      {post.map(Post => (
-        
-        <div key={Post.id} className={styles.wrapContent}>
-          <hr/>
-          <p className={`${styles.Post} ${Post.type === '공지' ? styles.notice : styles.normal}`}>{Post.type}</p>
-          <h3 className={styles.title}>{Post.title}</h3>
-          <p className={styles.content1}>{Post.content}</p>
-          
+      <BoarderHeader onFilterChange={handleFilterChange} />
+      {filteredPosts.map(post => (
+        <div key={post.id} className={styles.wrapContent}>
+          <hr />
+          <p className={`${styles.Post} ${post.type === '공지' ? styles.notice : styles.normal}`}>{post.type}</p>
+          <h3 className={styles.title}>{post.title}</h3>
+          <p className={styles.content1}>{post.content}</p>
         </div>
       ))}
-      <hr/>
+      <hr />
       <div>
         <button className={styles.btn} onClick={handleBtn}>+글쓰기</button>
       </div>
     </div>
-  )
+  );
 }
