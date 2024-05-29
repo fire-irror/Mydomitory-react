@@ -3,12 +3,12 @@ import styles from '../../css/Laundry/Laundry.module.css'
 import Laundring from '../../assets/Laundring.svg'
 import emptyLaundry from '../../assets/emptyLaundry.svg'
 import Table from '../../assets/LaundryTable.svg'
-import { useNavigate } from "react-router";
 import LaundryBtn from "./LaundryBtn";
 import LaundryToggle from "./LaundryToggle";
 
+
 export default function Laundry() {
-  const navigate = useNavigate();
+
   const [laundryStatus, setLaundryStatus] = useState([
     { id: 1, room: null, isWashing: false },
     { id: 2, room: null, isWashing: false },
@@ -23,6 +23,8 @@ export default function Laundry() {
       )
     );
   };
+
+
 
   return (
     <div className={styles.container}>
@@ -51,7 +53,7 @@ export default function Laundry() {
       </div>
       <div className={styles.Tables}>
         <img src={Table} className={styles.table} alt="Laundry Table" />
-        <LaundryBtn />
+        <LaundryBtn/>
       </div>
     </div>
   );

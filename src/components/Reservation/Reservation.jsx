@@ -9,6 +9,7 @@ export default function Reservation() {
   const buttons = Array.from({ length: buttonCount }, (_, i) => i + 1);
   const [activeButton, setActiveButton] = useState(null);
   const [userData, setUserData] = useState(null);
+  const [laundryRes, setLaundryRes] = useState(null);
   const userId = 1;
   const nav = useNavigate()
 
@@ -17,6 +18,13 @@ export default function Reservation() {
       .then(response => {
         setUserData(response.data[0]);
       })
+      .catch(e => {
+        console.error(e);
+      });
+      
+    axios.get(`http://localhost:8080/laundry/${userId}`).then(response => {
+      setLaundryRes(response.data[0])
+    })
       .catch(e => {
         console.error(e);
       });
@@ -31,6 +39,7 @@ export default function Reservation() {
   const handleResBtn = async () => {
     const roomNum = userData.room_num;
     const washerNum = getWasherNumber(activeButton);
+    const wash_time = getWasherTime(activeButton)
 
     if (washerNum === null) {
       alert('세탁기 번호를 확인할 수 없습니다.');
@@ -40,7 +49,8 @@ export default function Reservation() {
     const postData = {
       userId,
       washer_num: washerNum.toString(),
-      room_num: roomNum
+      room_num: roomNum,
+      wash_time: wash_time.toString()
     };
 
     try {
@@ -67,9 +77,24 @@ export default function Reservation() {
     return null;
   };
 
+  //각 버튼에 따른 세탁 시가 지정
+  const getWasherTime = (buttonNumber) => {
+    if ([1, 2, 3].includes(buttonNumber)) {
+      return "06:00"
+    } else if ([4, 5, 6].includes(buttonNumber)) {
+      return "07:30"
+    } else if ([7, 8, 9].includes(buttonNumber)) {
+      return "08:00"
+    } else if ([10, 11, 12].includes(buttonNumber)) {
+      return "09:30"
+    }
+    return null
+  }
+
   return (
     <div className={styles.container}>
       <p className={styles.title}>세탁 일지</p>
+      {laundryRes && <p>{`세탁기 번호: ${laundryRes.washer_num}, 세탁 시간: ${laundryRes.wash_time}`}</p>}
       <img src={LaundryResTable} className={styles.LaundryResTable} alt="Laundry Reservation Table" />
       <button className={styles.ResBtn} onClick={handleResBtn}>세탁 신청하기</button>
 
