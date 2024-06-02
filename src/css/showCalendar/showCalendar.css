@@ -1,0 +1,52 @@
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.reactCalendar {
+  width: 100%;
+  border: none;
+  border-radius: 0.5rem;
+  box-shadow: 4px 2px 10px 0px rgba(0, 0, 0, 0.13);
+  padding: 3% 5%;
+  background-color: white;
+}
+
+
+/* 일 날짜 간격 */
+  .reactCalendar__tile {
+    padding: 5px 0px 18px;
+    position: relative;
+  }
+
+/* 오늘 버튼 스타일 */
+.todayButton {
+  position: absolute;
+  right: 7%;
+  top: 6%;
+  width: 18%;
+  min-width: fit-content;
+  height: 1.5rem;
+  text-align: center;
+  margin: 0 auto;
+  line-height: 1.6rem;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  font-weight: 800;
+}
+
+.react-calendar__tile--active:enabled:hover, 
+.react-calendar__tile--active:enabled:focus{
+  background-color: red;
+  border-radius: 80%;
+}
+
+.react-calendar__tile--active{
+  border-radius: 50%;
+}
+
+.react-calendar__tile{
+  height: 5vh;
+}
