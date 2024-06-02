@@ -1,13 +1,21 @@
 import React from "react";
 import DatePicker from "react-horizontal-datepicker";
 import '../../css/Main/ViewCalendar.css'
+import { useNavigate } from "react-router";
 
 export default function ViewCalendar() {
+  const nav = useNavigate()
+
   const selectedDay = (val) => {
     console.log(val);
   };
+
+  const handleShowCalendar = ()=>{
+    nav('/')
+  }
   return (
     <div className="WrapViewCalendar">
+      <p className="showCalendarText" onClick={handleShowCalendar}>더보기</p>
       <DatePicker
         getSelectedDay={selectedDay}
         color={"#000"}

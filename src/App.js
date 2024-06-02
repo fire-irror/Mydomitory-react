@@ -11,6 +11,7 @@ import BoardPage from './pages/BoardPage';
 import PostPage from './pages/PostPage';
 import MyPagePage from './pages/MyPagePage';
 import EditPage from './pages/EditPage';
+import ShowCalendarPage from './pages/ShowCalendarPage';
 
 function App() {
   return (
@@ -27,7 +28,7 @@ function App() {
         <Route path='/post' element={<PostPage/>}/>  
         <Route path='/mypage' element={<MyPagePage/>}/>  
         <Route path='/edit' element={<EditPage/>}/>  
-
+        <Route path='/showcalendar' element={<ShowCalendarPage/>}/>  
       </Routes>
     </Router>
   );

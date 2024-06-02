@@ -1,11 +1,11 @@
 .WrapViewCalendar,
 .schedule{
-  margin-top: 5%;
+  margin-top: 1.5vh;
 }
 
 .schedule{
   border-left : 1px solid #000;
-  height : 100px;
+  height : 12vh;
 }
 
 .schedule1{
@@ -24,4 +24,10 @@
   width: 11.3vw;
   padding-bottom: 0.5vh;
   padding-top: 0.5vh;
+}
+
+
+.showCalendarText{
+  margin-left: 79vw;
+  font-size: 13px;
 }
