@@ -8,7 +8,7 @@
 .reactCalendar {
   width: 95vw;
   border: none;
-  margin-top: 11vh;
+  margin-top: 5vh;
   border-radius: 0.5rem;
   box-shadow: 4px 2px 8px 0px rgba(0, 0, 0, 0.13);
   padding: 3% 5%;
@@ -59,9 +59,12 @@
 .showCalendarBell{
   height: 3vh;
 }
+
+
+
 .showCalendarTitle{
   position: absolute;
-  left: 3vw;
+  left: 10vw;
   margin-top: 10%;
   color: #F5CA00;
   font-weight: bold;
@@ -80,4 +83,9 @@
   box-shadow: 4px 2px 8px 0px rgba(0, 0, 0, 0.13);
   border-radius: 1vh;
   padding: 3vh;
+}
+
+.showCalendarBackbtn{
+  margin-top: 4.7vh;
+  margin-left: 2vw;
 }
