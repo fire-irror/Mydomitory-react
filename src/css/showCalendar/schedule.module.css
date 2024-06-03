@@ -1,0 +1,21 @@
+.container {
+  position: relative;
+  display: flex;
+}
+
+.wrap {
+  position: absolute;
+  width: 95vw;
+  height: 8vh;
+  bottom: -23vh;
+  border-radius: 1vh;
+}
+
+.schedule {
+  padding: 3vw;
+  border-radius: 5px;
+  background-color: #ffe043a5;
+  margin-bottom: 1vh;
+  width: 41vh;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}

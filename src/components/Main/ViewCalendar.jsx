@@ -11,7 +11,7 @@ export default function ViewCalendar() {
   };
 
   const handleShowCalendar = ()=>{
-    nav('/')
+    nav('/showcalendar')
   }
   return (
     <div className="WrapViewCalendar">

@@ -6,14 +6,18 @@
 }
 
 .reactCalendar {
-  width: 100%;
+  width: 95vw;
   border: none;
+  margin-top: 11vh;
   border-radius: 0.5rem;
-  box-shadow: 4px 2px 10px 0px rgba(0, 0, 0, 0.13);
+  box-shadow: 4px 2px 8px 0px rgba(0, 0, 0, 0.13);
   padding: 3% 5%;
-  background-color: white;
+  background-color: #fff;
 }
-
+.react-calendar__navigation__label__labelText{
+  font-size: 15px;
+  font-weight: bold;
+}
 
 /* 일 날짜 간격 */
   .reactCalendar__tile {
@@ -21,32 +25,59 @@
     position: relative;
   }
 
-/* 오늘 버튼 스타일 */
-.todayButton {
-  position: absolute;
-  right: 7%;
-  top: 6%;
-  width: 18%;
-  min-width: fit-content;
-  height: 1.5rem;
-  text-align: center;
-  margin: 0 auto;
-  line-height: 1.6rem;
-  border-radius: 15px;
-  font-size: 0.8rem;
-  font-weight: 800;
-}
+
 
 .react-calendar__tile--active:enabled:hover, 
 .react-calendar__tile--active:enabled:focus{
-  background-color: red;
+  background-color: rgb(255, 151, 151);
   border-radius: 80%;
 }
 
 .react-calendar__tile--active{
   border-radius: 50%;
+  background-color: rgb(255, 151, 151);
+  color: black;
 }
 
 .react-calendar__tile{
   height: 5vh;
+}
+
+.react-calendar__tile--now{
+  border-radius: 50vh;
+  background-color: #ffeda793;
+}
+.react-calendar__tile--active {
+  background-color: rgb(255, 151, 151);
+}
+
+.ShowCalendarWrap{
+  display: flex;
+  text-align: center;
+}
+
+.showCalendarBell{
+  height: 3vh;
+}
+.showCalendarTitle{
+  position: absolute;
+  left: 3vw;
+  margin-top: 10%;
+  color: #F5CA00;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+
+.todayInfoContainer {
+  position: absolute;
+  bottom: -13.8vh; 
+  width: 95vw;
+}
+
+.todayInfoBox {
+  background-color: #fff;
+  box-shadow: 4px 2px 8px 0px rgba(0, 0, 0, 0.13);
+  border-radius: 1vh;
+  padding: 3vh;
 }
