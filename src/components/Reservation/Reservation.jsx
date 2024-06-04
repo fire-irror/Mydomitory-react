@@ -9,8 +9,10 @@ export default function Reservation() {
   const buttons = Array.from({ length: buttonCount }, (_, i) => i + 1);
   const [activeButton, setActiveButton] = useState(null);
   const [userData, setUserData] = useState(null);
+  const [washerNum, setWasherNum] = useState(null);
+  const [reservedWashers, setReservedWashers] = useState([]);
   const userId = 1;
-  const nav = useNavigate()
+  const nav = useNavigate();
 
   useEffect(() => {
     axios.get(`http://localhost:8080/user/${userId}`)
@@ -20,18 +22,29 @@ export default function Reservation() {
       .catch(e => {
         console.error(e);
       });
-      
   }, [userId]);
 
-  // 사용자가 세탁기를 클릭할 때의 핸들러
+  useEffect(() => {
+    axios.get('http://localhost:8080/laundry')
+      .then(response => {
+        const reserved = response.data.map(reservation => reservation.washer_num);
+        setReservedWashers(reserved);
+      })
+      .catch(e => {
+        console.error(e);
+      });
+  }, []);
+
   const handleButtonClick = (number) => {
+    if (reservedWashers.includes(number)) {
+      return;
+    }
     setActiveButton(number);
+    setWasherNum(number);
   };
 
-  // 세탁기 예약 요청 핸들러
   const handleResBtn = async () => {
     const roomNum = userData.room_num;
-    const washerNum = getWasherNumber(activeButton);
 
     if (washerNum === null) {
       alert('세탁기 번호를 확인할 수 없습니다.');
@@ -40,7 +53,7 @@ export default function Reservation() {
 
     const postData = {
       userId,
-      washer_num: washerNum.toString(),
+      washer_num: washerNum,
       room_num: roomNum,
     };
 
@@ -48,26 +61,12 @@ export default function Reservation() {
       const response = await axios.post('http://localhost:8080/laundry', postData);
       if (response.status === 200) {
         alert("성공");
-        nav('/laundry')
+        nav('/laundry');
       }
     } catch (e) {
       alert('실패');
     }
   };
-
-  // 각 버튼에 따른 세탁기 번호 지정
-  //includes를 사용하여 배열속에 해당 번호가 있는지 확인
-  const getWasherNumber = (buttonNumber) => {
-    if ([1, 4, 7, 10].includes(buttonNumber)) {
-      return 1;
-    } else if ([2, 5, 8, 11].includes(buttonNumber)) {
-      return 2;
-    } else if ([3, 6, 9, 12].includes(buttonNumber)) {
-      return 3;
-    }
-    return null;
-  };
-
 
   return (
     <div className={styles.container}>
@@ -79,8 +78,9 @@ export default function Reservation() {
         {buttons.map((number) => (
           <button
             key={number}
-            className={`${styles[`b${number}`]} ${activeButton === number ? styles.active : ''}`}
+            className={`${styles[`b${number}`]} ${reservedWashers.includes(number) ? styles.reserved : activeButton === number ? styles.active : ''}`}
             onClick={() => handleButtonClick(number)}
+            disabled={reservedWashers.includes(number)}
           >
           </button>
         ))}

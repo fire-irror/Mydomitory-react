@@ -89,3 +89,7 @@
   background-color: #079B28; 
 }
 
+.reserved {
+  background-color: red;
+  cursor: not-allowed;
+}

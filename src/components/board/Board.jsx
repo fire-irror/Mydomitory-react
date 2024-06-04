@@ -1,3 +1,4 @@
+// Board.jsx
 import React, { useEffect, useState } from "react";
 import styles from '../../css/board/board.module.css'
 import BoarderHeader from "./BoarderHeader";
@@ -5,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 export default function Board() {
-  const nav = useNavigate()
+  const nav = useNavigate();
   const [posts, setPosts] = useState([]);
   const [filteredPosts, setFilteredPosts] = useState([]);
 
@@ -29,19 +30,22 @@ export default function Board() {
 
   const handleFilterChange = (filter) => {
     if (filter === '전체') {
-      // 모든 게시글을 보여주기
-      setFilteredPosts(posts); 
+      setFilteredPosts(posts);
     } else {
-      const filtered = posts.filter(post => post.type === filter); // 해당 필터에 해당하는 게시글만 필터링합니다.
+      const filtered = posts.filter(post => post.type === filter);
       setFilteredPosts(filtered);
     }
+  };
+
+  const handlePostClick = (postId) => {
+    nav(`/board/${postId}`); // 게시글 클릭 시 상세 페이지로 이동
   };
 
   return (
     <div className={styles.container}>
       <BoarderHeader onFilterChange={handleFilterChange} />
       {filteredPosts.map(post => (
-        <div key={post.id} className={styles.wrapContent}>
+        <div key={post.id} className={styles.wrapContent} onClick={() => handlePostClick(post.id)}>
           <hr />
           <p className={`${styles.Post} ${post.type === '공지' ? styles.notice : styles.normal}`}>{post.type}</p>
           <h3 className={styles.title}>{post.title}</h3>
