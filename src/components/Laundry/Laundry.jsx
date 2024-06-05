@@ -24,6 +24,7 @@ export default function Laundry() {
     );
   };
 
+  //사용자의 washer_num와 room_num 가져오기
   useEffect(() => {
     axios.get('http://localhost:8080/laundry')
       .then(response => {
@@ -52,9 +53,7 @@ export default function Laundry() {
             <img
               src={laundry.isWashing ? Laundring : emptyLaundry}
               className={laundry.isWashing ? styles.Laundring : styles.emptyLaundry}
-              alt={laundry.isWashing ? "Laundring" : "Empty Laundry"}
             />
-            <p>{laundry.room}</p>
             <p>{laundry.isWashing ? "세탁중" : "비어있음"}</p>
             <LaundryToggle
               isChecked={laundry.isWashing}
