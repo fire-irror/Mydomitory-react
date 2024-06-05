@@ -87,7 +87,7 @@
   width: 15vw;
   border-radius: 1vh;
   border: none;
-  background-color: #079b27;
+  background-color: #fff;
 }
 
 .b1,
@@ -132,6 +132,6 @@
 } 
 
 .reserved {
-  background-color: red;
-  cursor: not-allowed;
+  font-weight: bold;
+  font-size: 15px;
 }

@@ -27,7 +27,10 @@ export default function Laundry() {
   useEffect(() => {
     axios.get('http://localhost:8080/laundry')
       .then(response => {
-        const reserved = response.data.map(reservation => reservation.washer_num);
+        const reserved = response.data.map(reservation => ({
+          washer_num: reservation.washer_num,
+          room_num: reservation.room_num,
+        }))
         setReservedWashers(reserved);
       })
       .catch(e => {
@@ -62,12 +65,15 @@ export default function Laundry() {
       </div>
       <div className={styles.Tables}>
         <img src={Table} className={styles.table} />
+
         <div className={styles.wrapBtn}>
-          {reservedWashers.map((number) => (
+          {reservedWashers.map(({ washer_num, room_num }) => (
             <button
-              key={number}
-              className={`${styles[`b${number}`]} ${styles.reserved}`}
-            />
+              key={washer_num}
+              className={`${styles[`b${washer_num}`]} ${styles.reserved}`}
+            >
+              {room_num}
+            </button>
           ))}
         </div>
         <LaundryBtn />
