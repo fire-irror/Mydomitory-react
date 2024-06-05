@@ -1,14 +1,14 @@
-import React, { useState } from "react";
-import styles from '../../css/Laundry/Laundry.module.css'
-import Laundring from '../../assets/Laundring.svg'
-import emptyLaundry from '../../assets/emptyLaundry.svg'
-import Table from '../../assets/LaundryTable.svg'
+import React, { useState, useEffect } from "react";
+import styles from '../../css/Laundry/Laundry.module.css';
+import Laundring from '../../assets/Laundring.svg';
+import emptyLaundry from '../../assets/emptyLaundry.svg';
+import Table from '../../assets/LaundryTable.svg';
 import LaundryBtn from "./LaundryBtn";
 import LaundryToggle from "./LaundryToggle";
-
+import axios from "axios";
 
 export default function Laundry() {
-
+  const [reservedWashers, setReservedWashers] = useState([]);
   const [laundryStatus, setLaundryStatus] = useState([
     { id: 1, room: null, isWashing: false },
     { id: 2, room: null, isWashing: false },
@@ -24,7 +24,16 @@ export default function Laundry() {
     );
   };
 
-
+  useEffect(() => {
+    axios.get('http://localhost:8080/laundry')
+      .then(response => {
+        const reserved = response.data.map(reservation => reservation.washer_num);
+        setReservedWashers(reserved);
+      })
+      .catch(e => {
+        console.error(e);
+      });
+  }, []);
 
   return (
     <div className={styles.container}>
@@ -52,8 +61,16 @@ export default function Laundry() {
         ))}
       </div>
       <div className={styles.Tables}>
-        <img src={Table} className={styles.table} alt="Laundry Table" />
-        <LaundryBtn/>
+        <img src={Table} className={styles.table} />
+        <div className={styles.wrapBtn}>
+          {reservedWashers.map((number) => (
+            <button
+              key={number}
+              className={`${styles[`b${number}`]} ${styles.reserved}`}
+            />
+          ))}
+        </div>
+        <LaundryBtn />
       </div>
     </div>
   );
