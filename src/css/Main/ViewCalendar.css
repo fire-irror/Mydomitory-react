@@ -1,16 +1,3 @@
-/* .WrapViewCalendar, */
-/* .schedule{
-  margin-top: 1.5vh;
-}
-
-.schedule{
-  border-left : 1px solid #000;
-  height : 12vh;
-}
-
-.schedule1{
-  margin-left: 3%;
-} */
 
 .DatePicker_button__ob8dZ{
   display: none;
@@ -30,4 +17,34 @@
 .showCalendarText{
   margin-left: 79vw;
   font-size: 13px;
+}
+
+
+.wrapSchedule {
+  display: flex;
+  align-items: center;
+}
+
+.round {
+  margin-right: 2vh;
+}
+
+
+.hrLine {
+  position: absolute; 
+  top: 0; 
+  bottom: 0; 
+  width: 0.1vh;
+  background-color: #ccc; 
+  margin-top: 1.8vh;
+  height: 5vh;
+  margin-left: 0.3vw;
+}
+
+.scheduleItem {
+  position: relative; 
+  display: flex;
+  align-items: center;
+  margin: 2vh;
+  margin-bottom: 1vh;
 }

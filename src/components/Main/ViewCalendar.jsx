@@ -4,6 +4,7 @@ import '../../css/Main/ViewCalendar.css'
 import { useNavigate } from "react-router";
 import axios from "axios";
 import moment from "moment";
+import round from '../../assets/round.svg'
 
 export default function ViewCalendar() {
   const nav = useNavigate();
@@ -18,10 +19,9 @@ export default function ViewCalendar() {
   }, [selectedDate]);
 
   const fetchSchedule = async (date) => {
-    console.log(date)
     try {
       const response = await axios.get(`http://localhost:8080/schedule/${date}`);
-      setSchedule(response.data); 
+      setSchedule(response.data);
     } catch (e) {
       console.error(e);
     }
@@ -45,7 +45,15 @@ export default function ViewCalendar() {
       />
       <div className="schedule">
         {schedule.map((item, index) => (
-          <p className="schedule1" key={index}>{item.content}</p>
+          <div className="wrapSchedule" key={index}>
+            <div className="scheduleContent">
+              <div className="scheduleItem">
+                <img src={round} className="round"/>
+                {index !== schedule.length - 1 && <hr className="hrLine"/>}
+                <p className="scheduleText">{item.content}</p>
+              </div>
+            </div>
+          </div>
         ))}
       </div>
     </div>
