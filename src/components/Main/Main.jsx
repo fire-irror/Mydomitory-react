@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import '../../css/Main/Main.css'
+import styles from '../../css/Main/Main.module.css'
 import axios from "axios";
 import teacherImg from '../../assets/teacher.svg'
 import cleanImg from '../../assets/clean.svg'
@@ -10,6 +10,7 @@ export default function Main() {
   const [userData, setUserData] = useState(null)
   const [todayTeacher, setTodayTeacher] = useState(null)
   const [roomNum, setRoomNum] = useState({ start: null, end: null })
+
 
   //사용자 정보에서 이름, 학교 가져오는 get
   useEffect(() => {
@@ -32,6 +33,8 @@ export default function Main() {
       })
   }, [])
 
+
+
   //오늘의 청소 당번 가져오는 get
   useEffect(() => {
     axios.get('http://localhost:8080/public/cleaning/today').then(response => {
@@ -46,42 +49,42 @@ export default function Main() {
   }, [])
 
   return (
-    <div className="Main">
-      <p className="MainTitle">HOME</p>
+    <div className={styles.Main}>
+      <p className={styles.MainTitle}>HOME</p>
       {userData ? (
         <div>
-          <p className="SchoolName">{userData.school}</p>
-          <p className="MainGreeting">안녕하세요, {userData.name}님!</p>
+          <p className={styles.SchoolName}>{userData.school}</p>
+          <p className={styles.MainGreeting}>안녕하세요, {userData.name}님!</p>
         </div>
       ) : (
         <p>Loading...</p>
       )}
 
-      <div className="wrapMainContent">
-        <div className="teacher">
-          <img src={teacherImg} className="teacherImg" />
-          <p className="TodayTeacher">오늘의 사감쌤</p>
+      <div className={styles.wrapMainContent}>
+        <div className={styles.teacher}>
+          <img src={teacherImg} className={styles.teacherImg} />
+          <p className={styles.TodayTeacher}>오늘의 사감쌤</p>
           {todayTeacher ? (
-            <p className="TeacherA">{todayTeacher.teacherName} 선생님</p>
+            <p className={styles.TeacherA}>{todayTeacher.teacherName} 선생님</p>
           ) : (
             <p>Loading...</p>
           )}
         </div>
-        <div className="clean">
-          <img src={cleanImg} className="cleanImg" />
-          <p className="cleaning">공동구역 청소</p>
+        <div className={styles.clean}>
+          <img src={cleanImg} className={styles.cleanImg} />
+          <p className={styles.cleaning}>공동구역 청소</p>
           {roomNum.start && roomNum.end ? (
-            <p className="cleaningroom">{roomNum.start.roomNum} - {roomNum.end.roomNum}</p>
+            <p className={styles.cleaningroom}>{roomNum.start.roomNum} - {roomNum.end.roomNum}</p>
           ) : (
             <p>Loading...</p>
           )}
         </div>
         <ViewScore />
       </div>
-      <div className="WrapCalendar">
+      <div className={styles.WrapCalendar}>
         <p className="calendarTitle">일정보기</p>
         <ViewCalendar />
       </div>
     </div>
-  )
+  );
 }

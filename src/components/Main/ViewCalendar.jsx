@@ -1,32 +1,52 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import DatePicker from "react-horizontal-datepicker";
 import '../../css/Main/ViewCalendar.css'
 import { useNavigate } from "react-router";
+import axios from "axios";
+import moment from "moment";
 
 export default function ViewCalendar() {
-  const nav = useNavigate()
+  const nav = useNavigate();
+  const [selectedDate, setSelectedDate] = useState(null);
+  const [schedule, setSchedule] = useState([]);
 
-  const selectedDay = (val) => {
-    console.log(val);
+  useEffect(() => {
+    if (selectedDate) {
+      const formattedDate = moment(selectedDate).format('YYYY-MM-DD');
+      fetchSchedule(formattedDate);
+    }
+  }, [selectedDate]);
+
+  const fetchSchedule = async (date) => {
+    console.log(date)
+    try {
+      const response = await axios.get(`http://localhost:8080/schedule/${date}`);
+      setSchedule(response.data); 
+    } catch (e) {
+      console.error(e);
+    }
   };
 
-  const handleShowCalendar = ()=>{
-    nav('/showcalendar')
-  }
+  const handleSelectedDay = (date) => {
+    setSelectedDate(date);
+  };
+
+  const handleShowCalendar = () => {
+    nav('/showcalendar');
+  };
+
   return (
     <div className="WrapViewCalendar">
       <p className="showCalendarText" onClick={handleShowCalendar}>더보기</p>
       <DatePicker
-        getSelectedDay={selectedDay}
+        getSelectedDay={handleSelectedDay}
         color={"#000"}
         enableDaysBefore={7}
       />
-
       <div className="schedule">
-        <p className="schedule1">호실 청소</p>
-        <p className="schedule1">점호</p>
-        <p className="schedule1">점호</p>
-        <p className="schedule1">점호</p>
+        {schedule.map((item, index) => (
+          <p className="schedule1" key={index}>{item.content}</p>
+        ))}
       </div>
     </div>
   );
