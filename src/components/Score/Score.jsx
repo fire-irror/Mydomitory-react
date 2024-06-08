@@ -3,12 +3,14 @@ import styles from '../../css/Score/Score.module.css';
 import ViewScore from "../Main/ViewScore";
 import Bell from '../../assets/bell.svg';
 import axios from "axios";
+import moment from "moment"; // moment 라이브러리 추가
 
 export default function Score() {
   const [personalScores, setPersonalScores] = useState([]);
+  const [penalties, setPenalties] = useState([]);
+  const [award, setAward] = useState([]);
   const userId = 1;
 
-  // 사용자의 모든 상벌점 내용을 가져오는 get  
   useEffect(() => {
     axios.get(`http://localhost:8080/personal/${userId}`)
       .then(response => {
@@ -19,14 +21,27 @@ export default function Score() {
       });
   }, [userId]);
 
-  // 날짜를 년, 월, 일로 분리하는 함수
+  useEffect(() => {
+    axios.get(`http://localhost:8080/penalties/${userId}`).then(response => {
+      setPenalties(response.data)
+    })
+      .catch(e => {
+        console.error(e)
+      })
+  }, [penalties]);
+
+  useEffect(() => {
+    axios.get(`http://localhost:8080/award/${userId}`).then(response => {
+      setAward(response.data)
+    })
+      .catch(e => {
+        console.error(e)
+      })
+  }, [award]);
+
+  // moment를 사용하여 날짜 포맷 변경
   const formatDate = (dateString) => {
-    const dateObj = new Date(dateString);
-    const year = dateObj.getFullYear();
-    // 월은 0부터 시작하므로 1을 더함
-    const month = dateObj.getMonth() + 1; 
-    const day = dateObj.getDate();
-    return `${year}.${month < 10 ? `0${month}` : month}.${day < 10 ? `0${day}` : day}`;
+    return moment(dateString).format("YYYY.MM.DD");
   };
 
   const renderHrWrap = () => {

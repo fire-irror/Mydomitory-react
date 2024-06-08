@@ -1,5 +1,5 @@
 import React from "react";
-import Score from "../components/Scroe/Score";
+import Score from "../components/Score/Score";
 import Nav from "../components/common/Nav";
 
 
