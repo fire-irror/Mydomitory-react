@@ -12,7 +12,7 @@ import PostPage from './pages/PostPage';
 import MyPagePage from './pages/MyPagePage';
 import EditPage from './pages/EditPage';
 import ShowCalendarPage from './pages/ShowCalendarPage';
-import PostDetailPage from './pages/PostDetailPage';
+import BoardDetailPage from './pages/BoardDetailPage';
 
 function App() {
   return (
@@ -26,10 +26,8 @@ function App() {
         <Route path='/score' element={<ScorePage/>}/>  
         <Route path='/reservation' element={<ReservationPage/>}/>  
         <Route path='/board' element={<BoardPage/>}/>  
+        <Route path="/board/:id" element={<BoardDetailPage/>} />
         <Route path='/post' element={<PostPage/>}/>  
-
-        <Route path="/board/:postId" element={<PostDetailPage />} />
-
         <Route path='/mypage' element={<MyPagePage/>}/>  
         <Route path='/edit' element={<EditPage/>}/>  
         <Route path='/showcalendar' element={<ShowCalendarPage/>}/>  
