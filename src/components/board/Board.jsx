@@ -29,7 +29,7 @@ export default function Board() {
   };
 
   const handleFilterChange = (filter) => {
-    if (filter === '전체') {
+    if (filter === '전체' || filter === 'HOT') {
       setFilteredPosts(posts);
     } else {
       const filtered = posts.filter(post => post.type === filter);
