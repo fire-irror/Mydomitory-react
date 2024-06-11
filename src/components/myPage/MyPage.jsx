@@ -36,10 +36,10 @@ export default function MyPage() {
   const icons = [
     { icon: <BiMessageDetail size={30} />, text: '게시판', path: '/board' },
     { icon: <MdOutlineLocalLaundryService size={30} />, text: '세탁', path: '/laundry' },
-    { icon: <IoSettingsOutline size={30} />, text: '설정', path: '/settings' },
-    { icon: <HiOutlineQuestionMarkCircle size={30} />, text: '도움말', path: '/faq' },
-    { icon: <MdOutlineHeadset size={30} />, text: '고객센터', path: '/support' },
-    { icon: <BsFillPersonXFill size={30} />, text: '로그아웃', path: '/logout' },
+    { icon: <IoSettingsOutline size={30} />, text: '설정' },
+    { icon: <HiOutlineQuestionMarkCircle size={30} />, text: '도움말' },
+    { icon: <MdOutlineHeadset size={30} />, text: '고객센터'},
+    { icon: <BsFillPersonXFill size={30} />, text: '로그아웃'},
   ];
 
   const handleScore = () => {
