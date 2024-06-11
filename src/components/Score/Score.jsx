@@ -3,14 +3,16 @@ import styles from '../../css/Score/Score.module.css';
 import ViewScore from "../Main/ViewScore";
 import Bell from '../../assets/bell.svg';
 import axios from "axios";
-import moment from "moment"; // moment 라이브러리 추가
+import moment from "moment";
 
 export default function Score() {
   const [personalScores, setPersonalScores] = useState([]);
   const [penalties, setPenalties] = useState([]);
   const [award, setAward] = useState([]);
+  const [filter, setFilter] = useState('all');
   const userId = 1;
 
+  //전체 상벌점 가져오기
   useEffect(() => {
     axios.get(`http://localhost:8080/personal/${userId}`)
       .then(response => {
@@ -21,23 +23,25 @@ export default function Score() {
       });
   }, [userId]);
 
+  //벌점 가져오기
   useEffect(() => {
-    axios.get(`http://localhost:8080/penalties/${userId}`).then(response => {
+    axios.get(`http://localhost:8080/personal/penalties/${userId}`).then(response => {
       setPenalties(response.data)
     })
       .catch(e => {
         console.error(e)
       })
-  }, [penalties]);
+  }, [userId]);
 
+  //상점 가져오기
   useEffect(() => {
-    axios.get(`http://localhost:8080/award/${userId}`).then(response => {
+    axios.get(`http://localhost:8080/personal/award/${userId}`).then(response => {
       setAward(response.data)
     })
       .catch(e => {
         console.error(e)
       })
-  }, [award]);
+  }, [userId]);
 
   // moment를 사용하여 날짜 포맷 변경
   const formatDate = (dateString) => {
@@ -45,7 +49,17 @@ export default function Score() {
   };
 
   const renderHrWrap = () => {
-    return personalScores.map((score, index) => (
+    let scoresToDisplay = [];
+
+    if (filter === 'all') {
+      scoresToDisplay = personalScores;
+    } else if (filter === 'award') {
+      scoresToDisplay = award;
+    } else if (filter === 'penalties') {
+      scoresToDisplay = penalties;
+    }
+
+    return scoresToDisplay.map((score, index) => (
       <div key={index} className={styles.wrapHr}>
         <div className={styles.tableContent}>
           <p className={styles.p1}>{formatDate(score.date)}</p>
@@ -65,12 +79,19 @@ export default function Score() {
         <ViewScore />
       </div>
 
+      <div className={styles.filter}>
+        <select value={filter} onChange={(e) => setFilter(e.target.value)} className={styles.select}>
+          <option value="all">전체</option>
+          <option value="award">상점</option>
+          <option value="penalties">벌점</option>
+        </select>
+      </div>
+
       <div className={styles.table}>
         <p className={styles.tableYear}></p>
-        <p className={styles.moreView}>더보기</p>
       </div>
       <hr className={styles.headerHr} />
-      {personalScores.length > 0 ? renderHrWrap() : <p>데이터가 없습니다.</p>}
+      {personalScores.length > 0 || award.length > 0 || penalties.length > 0 ? renderHrWrap() : <p>데이터가 없습니다.</p>}
     </div>
   );
 }

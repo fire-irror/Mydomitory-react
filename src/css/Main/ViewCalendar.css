@@ -23,6 +23,7 @@
 .wrapSchedule {
   display: flex;
   align-items: center;
+  overflow: visible;
 }
 
 .round {
