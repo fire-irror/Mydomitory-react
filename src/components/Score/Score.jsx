@@ -81,9 +81,9 @@ export default function Score() {
 
       <div className={styles.filter}>
         <select value={filter} onChange={(e) => setFilter(e.target.value)} className={styles.select}>
-          <option value="all">전체</option>
-          <option value="award">상점</option>
-          <option value="penalties">벌점</option>
+          <option value="all" className={styles.option}>전체</option>
+          <option value="award" className={styles.option}>상점</option>
+          <option value="penalties" className={styles.option}>벌점</option>
         </select>
       </div>
 

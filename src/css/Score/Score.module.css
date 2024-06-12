@@ -60,14 +60,8 @@
   border-radius: 1vh;
   width: 15vw;
   height: 3vh;
-  z-index: 1000;
   margin-bottom: 1vh;
   text-align: center;
-  border-color: #d9d9d9ad;
-  background-color: none;
-}
-
-.select option {
-  z-index: 1001; 
+  border-color: #cacaca96;
 }
 

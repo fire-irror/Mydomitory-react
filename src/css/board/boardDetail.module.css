@@ -1,12 +1,90 @@
 .container{
+  position: relative;
+}
+
+.wrapBtn{
+  box-shadow: 3px 1px 5px rgba(219, 219, 219, 0.745);
+  height: 6vh;
+}
+.backBtn{
   margin: 2vh;
 }
 
 
-.backBtn{
-  margin-top: 1vh;
+.wrapContent{
+  margin-top: 5vh;
 }
 
 .wrapContent{
+  text-align: center;
+  margin-top: 6vh;
+  margin-left: 3.5vh;
+}
+
+.notice,
+.normal{
+  font-size: 15px;
+  width: 14vw;
+  padding: 0.1vh;
+  font-weight: bold;
+  border-radius: 5vh;
+}
+.notice {
+  color: #FF5151; 
+  background-color: #FFD6D6; 
+}
+
+.normal {
+  color: #2D9AFF; 
+  background-color: #CAEFFF; 
+}
+
+.title{
+  font-size: 18px;
+  font-weight: bolder;
+  text-align: left;
+  padding-left: 1vw;
+  margin-top: 1vh;
+}
+
+.contentContainer{
+  display: flex;
+  border: solid rgba(0, 0, 0, 0.24) 1px;
+  padding: 3vh;
+  margin-right: 6.5vw;
   margin-top: 5vh;
+  border-radius: 1.5vh;
+  height: 45vh;
+}
+
+.content{
+  text-align: left;
+  line-height: 3vh;
+}
+
+.navBtn{
+  margin: 5vh;
+  text-align: center;
+  display: flex;
+  margin-left: 12vw;
+}
+
+.prevBtn,
+.nextBtn{
+  border: none;
+  background-color: #fff;
+  font-size: 15px;
+}
+
+.prevBtn{
+  padding-left: 1vw; 
+}
+
+.nextBtn{
+  margin-left: 46vw;
+}
+
+.prev,
+.next{
+  margin-top: 0.3vh;
 }
