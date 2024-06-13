@@ -50,11 +50,14 @@ export default function ShowCalendar() {
         />
         <div className="todayInfoContainer">
           <div className="todayInfoBox">
-            {/* 가져올 때 format으로 형식을 변환해주어야 함 */}
-            <p className="todayDayOfWeek">{moment(date).format("dddd")}</p>
-            <p className="todayDate">{moment(date).format("YYYY.MM.DD")}</p>
+            <p className="todayDay">{moment(date).format('DD')}</p>
+            <div className="todayDayOfWeekContainer">
+              <p className="todayDayOfWeek">{moment(date).format("dddd")}</p>
+              <p className="todayDate">{moment(date).format("YYYY.MM")}</p>
+            </div>
           </div>
         </div>
+
       </div>
     </div>
   );

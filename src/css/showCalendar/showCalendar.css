@@ -14,78 +14,104 @@
   padding: 3% 5%;
   background-color: #fff;
 }
-.react-calendar__navigation__label__labelText{
+
+.react-calendar__navigation__label__labelText {
   font-size: 15px;
   font-weight: bold;
 }
 
 /* 일 날짜 간격 */
-  .reactCalendar__tile {
-    padding: 5px 0px 18px;
-    position: relative;
-  }
+.reactCalendar__tile {
+  padding: 5px 0px 18px;
+  position: relative;
+}
 
-
-
-.react-calendar__tile--active:enabled:hover, 
-.react-calendar__tile--active:enabled:focus{
+.react-calendar__tile--active:enabled:hover,
+.react-calendar__tile--active:enabled:focus {
   background-color: rgb(255, 151, 151);
   border-radius: 80%;
 }
 
-.react-calendar__tile--active{
+.react-calendar__tile--active {
   border-radius: 50%;
   background-color: rgb(255, 151, 151);
   color: black;
 }
 
-.react-calendar__tile{
+.react-calendar__tile {
   height: 5vh;
 }
 
-.react-calendar__tile--now{
+.react-calendar__tile--now {
   border-radius: 50vh;
   background-color: #ffeda793;
 }
+
 .react-calendar__tile--active {
   background-color: rgb(255, 151, 151);
 }
 
-.ShowCalendarWrap{
+.ShowCalendarWrap {
   display: flex;
   text-align: center;
 }
 
-.showCalendarBell{
+.showCalendarBell {
   height: 3vh;
 }
 
-
-
-.showCalendarTitle{
+.showCalendarTitle {
   position: absolute;
   left: 10vw;
   margin-top: 10%;
-  color: #F5CA00;
+  color: #f5ca00;
   font-weight: bold;
   font-size: 20px;
 }
 
-
 .todayInfoContainer {
   position: absolute;
-  bottom: -13.8vh; 
-  width: 95vw;
+  bottom: -13.8vh;
+  display: flex;
 }
 
 .todayInfoBox {
+  display: flex;
   background-color: #fff;
   box-shadow: 4px 2px 8px 0px rgba(0, 0, 0, 0.13);
   border-radius: 1vh;
   padding: 3vh;
+  width: 80vw;
+  align-items: center;
 }
 
-.showCalendarBackbtn{
+.showCalendarBackbtn {
   margin-top: 4.7vh;
   margin-left: 2vw;
+}
+
+.todayDay,
+.todayDayOfWeekContainer {
+  color: rgba(0, 0, 0, 0.61);
+}
+
+.todayDay {
+  font-size: 43px;
+  font-weight: bold;
+  margin-right: 2vw;
+}
+
+.todayDayOfWeekContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.todayDayOfWeek {
+  font-weight: bold;
+}
+
+.todayDate {
+  margin-top: 0.5vh;
+  font-size: 14px;
 }
