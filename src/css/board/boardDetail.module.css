@@ -63,10 +63,9 @@
 }
 
 .navBtn{
-  margin: 5vh;
   text-align: center;
+  margin: 5vh;
   display: flex;
-  margin-left: 12vw;
 }
 
 .prevBtn,
@@ -76,15 +75,21 @@
   font-size: 15px;
 }
 
+
+.next,
+.prev{
+  position: absolute;
+  margin-top: 0.3vh;
+}
+
 .prevBtn{
-  padding-left: 1vw; 
+  margin-left: 1.5vh;
 }
 
 .nextBtn{
-  margin-left: 46vw;
+  padding-right: 0.8vw;
 }
 
-.prev,
-.next{
-  margin-top: 0.3vh;
+.wrapPrevBtn{
+  margin-right: 50vw;
 }
