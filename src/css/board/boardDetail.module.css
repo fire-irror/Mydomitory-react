@@ -10,14 +10,9 @@
   margin: 2vh;
 }
 
-
-.wrapContent{
-  margin-top: 5vh;
-}
-
 .wrapContent{
   text-align: center;
-  margin-top: 6vh;
+  margin-top: 7.5vh;
   margin-left: 3.5vh;
 }
 
@@ -52,7 +47,7 @@
   border: solid rgba(0, 0, 0, 0.24) 1px;
   padding: 3vh;
   margin-right: 6.5vw;
-  margin-top: 5vh;
+  margin-top: 8vh;
   border-radius: 1.5vh;
   height: 45vh;
 }
@@ -92,4 +87,12 @@
 
 .wrapPrevBtn{
   margin-right: 50vw;
+}
+
+.time{
+  position: absolute;
+  margin-left: 1vw;
+  margin-top: 7vh;
+  font-size: 13px;
+  font-weight: 300;
 }
