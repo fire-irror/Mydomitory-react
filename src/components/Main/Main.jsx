@@ -14,8 +14,7 @@ export default function Main() {
 
   //사용자 정보에서 이름, 학교 가져오는 get
   useEffect(() => {
-    const userId = 1;
-    axios.get(`http://localhost:8080/user/${userId}`).then(response => {
+    axios.get('http://3.36.91.138:80').then(response => {
       setUserData(response.data[0])
     })
       .catch(e => {
@@ -25,7 +24,7 @@ export default function Main() {
 
   //오늘의 사감선생님 가져오는 get
   useEffect(() => {
-    axios.get('http://localhost:8080/public/housemaster/today').then(response => {
+    axios.get('http://3.36.91.138:80').then(response => {
       setTodayTeacher(response.data[0])
     })
       .catch(e => {
@@ -37,7 +36,7 @@ export default function Main() {
 
   //오늘의 청소 당번 가져오는 get
   useEffect(() => {
-    axios.get('http://localhost:8080/public/cleaning/today').then(response => {
+    axios.get('http://3.36.91.138:80').then(response => {
       const data = response.data;
       if (data && data.length > 0) {
         setRoomNum({ start: data[0], end: data[data.length - 1] })

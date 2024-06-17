@@ -16,8 +16,7 @@ export default function MyPage() {
   const [userData, setUserData] = useState('');
 
   useEffect(() => {
-    const userId = 1;
-    axios.get(`http://localhost:8080/user/${userId}`).then(response => {
+    axios.get('http://3.36.91.138:80').then(response => {
       setUserData(response.data[0]);
     })
       .catch(e => {

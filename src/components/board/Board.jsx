@@ -16,7 +16,7 @@ export default function Board() {
 
   const getPosts = async () => {
     try {
-      const response = await axios.get('http://localhost:8080/board');
+      const response = await axios.get('http://3.36.91.138:80');
       setPosts(response.data);
       setFilteredPosts(response.data); // 초기에는 모든 게시글을 보여줍니다.
     } catch (e) {

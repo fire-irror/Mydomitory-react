@@ -27,7 +27,7 @@ export default function BoardDetail() {
 
   const getPost = async () => {
     try {
-      const response = await axios.get(`http://localhost:8080/board/${id}`);
+      const response = await axios.get('http://3.36.91.138:80');
       setPost(response.data);
       fetchPreviousPost();
       fetchNextPost();
@@ -39,7 +39,7 @@ export default function BoardDetail() {
   //이전글 가져오는 get
   const fetchPreviousPost = async () => {
     try {
-      const response = await axios.get(`http://localhost:8080/board/${id}/previous`);
+      const response = await axios.get('http://3.36.91.138:80');
       setPrevPost(response.data);
     } catch (e) {
       console.error(e);
@@ -49,7 +49,7 @@ export default function BoardDetail() {
   //다음을 가져오는 get
   const fetchNextPost = async () => {
     try {
-      const response = await axios.get(`http://localhost:8080/board/${id}/next`);
+      const response = await axios.get('http://3.36.91.138:80');
       setNextPost(response.data);
     } catch (e) {
       console.error(e);

@@ -26,7 +26,7 @@ export default function Laundry() {
 
   //사용자의 washer_num와 room_num 가져오기
   useEffect(() => {
-    axios.get('http://localhost:8080/laundry')
+    axios.get('http://3.36.91.138:80')
       .then(response => {
         const reserved = response.data.map(reservation => ({
           washer_num: reservation.washer_num,

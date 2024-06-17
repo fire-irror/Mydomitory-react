@@ -15,7 +15,7 @@ export default function Reservation() {
   const nav = useNavigate();
 
   useEffect(() => {
-    axios.get(`http://localhost:8080/user/${userId}`)
+    axios.get('http://3.36.91.138:80')
       .then(response => {
         setUserData(response.data[0]);
       })
@@ -25,7 +25,7 @@ export default function Reservation() {
   }, [userId]);
 
   useEffect(() => {
-    axios.get('http://localhost:8080/laundry')
+    axios.get('http://3.36.91.138:80')
       .then(response => {
         const reserved = response.data.map(reservation => reservation.washer_num);
         setReservedWashers(reserved);
@@ -58,7 +58,7 @@ export default function Reservation() {
     };
 
     try {
-      const response = await axios.post('http://localhost:8080/laundry', postData);
+      const response = await axios.post('http://3.36.91.138:80', postData);
       if (response.status === 200) {
         alert("성공");
         nav('/laundry');
