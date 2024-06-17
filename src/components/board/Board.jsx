@@ -1,4 +1,3 @@
-// Board.jsx
 import React, { useEffect, useState } from "react";
 import styles from '../../css/board/board.module.css'
 import BoarderHeader from "./BoarderHeader";
@@ -17,8 +16,12 @@ export default function Board() {
   const getPosts = async () => {
     try {
       const response = await axios.get('http://3.36.91.138:80/board');
-      setPosts(response.data);
-      setFilteredPosts(response.data); // 초기에는 모든 게시글을 보여줍니다.
+      const formattedPosts = response.data.map(post => ({
+        ...post,
+        previewContent: post.content.slice(0, 27) + (post.content.length > 10 ? '...' : '') // 처음 10글자만 가져오기
+      }));
+      setPosts(formattedPosts);
+      setFilteredPosts(formattedPosts); // 초기에는 모든 게시글을 보여줍니다.
     } catch (e) {
       console.error(e);
     }
@@ -49,7 +52,7 @@ export default function Board() {
           <hr />
           <p className={`${styles.Post} ${post.type === '공지' ? styles.notice : styles.normal}`}>{post.type}</p>
           <h3 className={styles.title}>{post.title}</h3>
-          <p className={styles.content1}>{post.content}</p>
+          <p className={styles.content1}>{post.previewContent}</p> {/* 수정된 부분 */}
         </div>
       ))}
       <hr />
