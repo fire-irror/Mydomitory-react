@@ -55,6 +55,10 @@
   margin-top: 4vh;
 }
 
+.table{
+  width: 45vh;
+}
+
 .resLaundry{
   color: black;
   background-color: #FFEF9E;
@@ -94,46 +98,40 @@
 .b4,
 .b7,
 .b10{
-  top: 47.8vh;
+  top: 48.8vh;
 }
 
-.b1,
-.b4,
-.b7,
-.b10{
-  margin-left: 1vw;
-}
 
 .b2,
 .b5,
 .b8,
 .b11{
-  margin-left: 21.8vw;
+  margin-left: 22.8vw;
 }
 
 .b3,
 .b6,
 .b9,
 .b12{
-  margin-left: 42vw;
+  margin-left: 45.8vw;
 }
 
 .b4,
 .b5,
 .b6{
-  top: 53.6vh;
+  top: 54.9vh;
 }
 
 .b7,
 .b8,
 .b9{
-  top: 59.5vh;
+  top: 61.5vh;
 }
 
 .b10,
 .b11,
 .b12{
-  top:65.5vh;
+  top:67.5vh;
 } 
 
 .reserved {
