@@ -12,7 +12,7 @@
 .calendarTitle{
   color: #F5CA00;
   font-weight: bold;
-  margin-left: 3%;
+  margin-left: 2vh;
   font-family: "Noto Sans KR", sans-serif;
   overflow: auto;
 }
@@ -23,7 +23,7 @@
 
 .MainTitle,
 .SchoolName{
-  margin-top: 10%;
+  margin-top: 3.5vh;
 }
 
 .MainGreeting,
@@ -44,11 +44,11 @@
 .teacher,
 .clean{
   position: relative;
-  width: 162px;
-  height: 90px;
-  border-radius: 10px;
-  margin-right: 10px; 
-  margin-left: 3%;
+  width: 43.2vw;
+  height: 11vh;
+  border-radius: 1vh;
+  margin-right: 2.5vw; 
+  margin-left: 3.5vw;
   margin-top: 10%;
   background-color: #f1f0f0;
   border-top: 40px solid #F6EA85;
@@ -56,9 +56,10 @@
 
 .TodayTeacher,
 .cleaning{
-  margin-left: 30%;
-  margin-top: 7%;
+  margin-left: 13vw;
+  margin-top: 1.5vh;
 }
+
 .TodayTeacher,
 .teacherImg,
 .cleanImg,
@@ -66,30 +67,28 @@
   color: black;
   font-size: 12px;
   position: absolute; 
-  top: -40px; 
+  top: -5vh; 
 }
 
 .teacherImg,
 .cleanImg{
-  margin-left: 15%;
-  margin-top: 5%;
+  margin-left: 6vw;
+  margin-top: 1.2vh;
 }
 
 .TeacherA,
 .cleaningroom{
   font-weight: bold;
-  padding: 25px;
-  padding-top: 20%;
 }
 
 .cleaningroom{
-  margin-left: 10%;
+  margin-left: 10vw;
 }
 
 .WrapCalendar{
-  margin-top: 50%;
-  margin-left: 3%;
-  width: 90%;
+  margin-top: 23.5vh;
+  margin-left: 3vw;
+  width: 90vw;
 }
 
 .calendarTitle{

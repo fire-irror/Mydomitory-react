@@ -6,23 +6,23 @@
 .goodScoreTitle{
   color: #000;
   font-weight: bold;
-  margin-left: 3%;
+  margin-left: 3vw;
   font-family: "Noto Sans KR", sans-serif;
 }
 
 .personalScore{
   position: absolute;
-  width: 92%;
-  height: 145px;
+  width: 92vw;
+  height: 17.8vh;
   background-color: rgba(245, 202, 0, 0.31);
-  margin-top: 50%;
-  margin-left: 4%;
-  border-radius: 10px;
+  margin-top: 23vh;
+  margin-left: 4vw;
+  border-radius: 1vh;
 }
 
 .score{
   font-size: 13px;
-  padding: 6%;
+  padding: 2vh;
   padding-bottom: 0;
 }
 
@@ -30,22 +30,22 @@
 .WrapbadScore{
   position: relative;
   background-color: #fff;
-  width: 66%;
-  height: 20%;
-  margin-left: 7%;
-  margin-top: 3.5%;
-  border-radius: 7px;
-  border-left: 70px solid #CAEFFF;
+  width: 61vw;
+  height: 3.6vh;
+  margin-left: 7vw;
+  margin-top: 1.8vh;
+  border-radius: 1vh;
+  border-left: 8.5vh solid #CAEFFF;
 }
 
 .WrapbadScore{
-  border-left: 70px solid #D5FAD9;
+  border-left: 8.5vh solid #D5FAD9;
 }
 .goodScoreTitle,
 .badScoreTitle{
-  margin-left: -50px; 
+  margin-left: -13vw; 
   font-size: 13px;
-  padding: 1%;
+  padding: 0.4vh;
 }
 
 .goodScoreTitle{
@@ -62,13 +62,13 @@
 .badScore {
   position: absolute;
   font-family: "Noto Sans KR", sans-serif;
-  top: 35%;
+  top: 1.3vh;
   font-size: 13px;
-  transform: translateY(-35%);
-  margin-left: 3%;
+  transform: translateY(-1.5vw);
+  margin-left: 3vw
 }
 
 .goodScore,
 .badScore {
-  margin-left: 85%;
+  margin-left: 51.5vw;
 } 
