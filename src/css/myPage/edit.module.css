@@ -38,13 +38,13 @@
   position: absolute;
   width: 4vh;
   height: 3.5vh;
-  margin-left: 13vw;
+  margin-left: 10vw;
   margin-top: 10vh;
   cursor: pointer;
 }
 
 .wrapContent {
-  padding: 10vw;
+  padding: 8vw;
 }
 
 .emailP {
@@ -52,7 +52,7 @@
   background-color: #dbdbdb79;
   padding: 3.2vw;
   border-radius: 1vh;
-  width: 76 vw;
+  width: 78vw;
 }
 
 .email {
@@ -65,7 +65,7 @@
   border-radius: 1vh;
   border-color: #8A8A8A;
   height: 2.5vh;
-  width: 75vw;
+  width: 80vw;
   margin-top: 1vh;
   border-width: 1.5px;
   padding: 1vh;
@@ -93,7 +93,7 @@
 }
 
 .doneBtn {
-  width: 80vw;
+  width: 85vw;
   padding: 1.5vh;
   border-radius: 1vh;
   border: none;
