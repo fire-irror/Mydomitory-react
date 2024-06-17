@@ -37,6 +37,23 @@ export default function ViewCalendar() {
 
   return (
     <div className="WrapViewCalendar">
+      <style>
+        {`
+          .DatePicker_button__ob8dZ {
+            display: none !important;
+          }
+
+          .DatePicker_monthYearLabel__IRVSg {
+            display: none !important;
+          }
+
+          .DatePicker_dateDayItem__sT2yQ {
+            width: 11.3vw !important;
+            padding-bottom: 0.5vh !important;
+            padding-top: 0.5vh !important;
+          }
+        `}
+      </style>
       <p className="showCalendarText" onClick={handleShowCalendar}>더보기</p>
       <DatePicker
         getSelectedDay={handleSelectedDay}

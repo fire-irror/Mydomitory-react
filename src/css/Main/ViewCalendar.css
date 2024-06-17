@@ -1,19 +1,17 @@
 
-.WrapViewCalendar 
-.DatePicker_button__ob8dZ {
-  display: none !important;
+.DatePicker_button__ob8dZ{
+  display: none;
+} 
+
+.DatePicker_monthYearLabel__IRVSg{
+  display: none;
 }
 
-.WrapViewCalendar .DatePicker_monthYearLabel__IRVSg {
-  display: none !important;
+.DatePicker_dateDayItem__sT2yQ{
+  width: 11.3vw;
+  padding-bottom: 0.5vh;
+  padding-top: 0.5vh;
 }
-
-.WrapViewCalendar .DatePicker_dateDayItem__sT2yQ {
-  width: 11.3vw !important;
-  padding-bottom: 0.5vh !important;
-  padding-top: 0.5vh !important;
-}
-
 
 
 .showCalendarText{
