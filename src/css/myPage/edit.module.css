@@ -38,8 +38,8 @@
   position: absolute;
   width: 4vh;
   height: 3.5vh;
-  margin-left: 19vw;
-  /* margin-top: 19vh; */
+  margin-left: 15vw;
+  margin-top: 10vh;
   cursor: pointer;
 }
 
