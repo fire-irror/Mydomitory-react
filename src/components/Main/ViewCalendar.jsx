@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import DatePicker from "react-horizontal-datepicker";
-import styles from '../../css/Main/ViewCalendar.css';
+import '../../css/Main/ViewCalendar.css'
 import { useNavigate } from "react-router";
 import axios from "axios";
 import moment from "moment";
-import round from '../../assets/round.svg';
+import round from '../../assets/round.svg'
 
 export default function ViewCalendar() {
   const nav = useNavigate();
@@ -37,7 +37,7 @@ export default function ViewCalendar() {
 
   return (
     <div className="WrapViewCalendar">
-      <p className={styles.showCalendarText} onClick={handleShowCalendar}>더보기</p>
+      <p className="showCalendarText" onClick={handleShowCalendar}>더보기</p>
       <DatePicker
         getSelectedDay={handleSelectedDay}
         color={"#000"}
@@ -48,9 +48,9 @@ export default function ViewCalendar() {
           <div className="wrapSchedule" key={index}>
             <div className="scheduleContent">
               <div className="scheduleItem">
-                <img src={round} className={styles.round}/>
-                {index !== schedule.length - 1 && <hr className={styles.hrLine}/>}
-                <p className={styles.scheduleText}>{item.content}</p>
+                <img src={round} className="round"/>
+                {index !== schedule.length - 1 && <hr className="hrLine"/>}
+                <p className="scheduleText">{item.content}</p>
               </div>
             </div>
           </div>
