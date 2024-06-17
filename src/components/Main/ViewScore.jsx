@@ -19,9 +19,9 @@ export default function ViewScore() {
       try {
         //promise.all을 사용하게 되면 동시에 실행되어 값이 들어오는 네트워크 요청을 최적화 시킴
         const [totalResponse, awardResponse, penaltiesResponse] = await Promise.all([
-          axios.get('http://3.36.91.138:80'),
-          axios.get('http://3.36.91.138:80'),
-          axios.get('http://3.36.91.138:80')
+          axios.get(`http://3.36.91.138:80/personal/total/${userId}`),
+          axios.get(`http://3.36.91.138:80/personal/award/${userId}`),
+          axios.get(`http://3.36.91.138:80/personal/penalties/${userId}`)
         ]);
 
         setPersonal(totalResponse.data);

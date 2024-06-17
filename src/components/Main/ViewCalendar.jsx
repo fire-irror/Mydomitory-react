@@ -20,7 +20,7 @@ export default function ViewCalendar() {
 
   const fetchSchedule = async (date) => {
     try {
-      const response = await axios.get('http://3.36.91.138:80');
+      const response = await axios.get(`http://3.36.91.138:80/schedule/${date}`);
       setSchedule(response.data);
     } catch (e) {
       console.error(e);

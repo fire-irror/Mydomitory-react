@@ -14,7 +14,7 @@ export default function Score() {
 
   //전체 상벌점 가져오기
   useEffect(() => {
-    axios.get('http://3.36.91.138:80')
+    axios.get(`http://3.36.91.138:80/personal/${userId}`)
       .then(response => {
         setPersonalScores(response.data);
       })
@@ -25,7 +25,7 @@ export default function Score() {
 
   //벌점 가져오기
   useEffect(() => {
-    axios.get('http://3.36.91.138:80').then(response => {
+    axios.get(`http://3.36.91.138:80/personal/penalties/${userId}`).then(response => {
       setPenalties(response.data)
     })
       .catch(e => {
@@ -35,7 +35,7 @@ export default function Score() {
 
   //상점 가져오기
   useEffect(() => {
-    axios.get('http://3.36.91.138:80').then(response => {
+    axios.get(`http://3.36.91.138:80/personal/award/${userId}`).then(response => {
       setAward(response.data)
     })
       .catch(e => {

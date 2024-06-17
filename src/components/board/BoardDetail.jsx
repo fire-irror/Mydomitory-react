@@ -4,20 +4,13 @@ import { useParams, useNavigate } from "react-router-dom";
 import backBtn from '../../assets/backBtn.svg';
 import { IoIosArrowForward, IoIosArrowBack } from "react-icons/io";
 import styles from '../../css/board/boardDetail.module.css';
-import moment from "moment/moment";
 
-const formatDate = (date) => {
-  return moment(date).format('YYYY.MM.DD');
-};
 
 export default function BoardDetail() {
   const [post, setPost] = useState(null);
   const [prevPost, setPrevPost] = useState(null);
   const [nextPost, setNextPost] = useState(null);
-
-
   
-
   const { id } = useParams();
   const navigate = useNavigate();
 
@@ -27,7 +20,7 @@ export default function BoardDetail() {
 
   const getPost = async () => {
     try {
-      const response = await axios.get('http://3.36.91.138:80');
+      const response = await axios.get(`http://3.36.91.138:80/board/${id}`);
       setPost(response.data);
       fetchPreviousPost();
       fetchNextPost();
@@ -39,7 +32,7 @@ export default function BoardDetail() {
   //이전글 가져오는 get
   const fetchPreviousPost = async () => {
     try {
-      const response = await axios.get('http://3.36.91.138:80');
+      const response = await axios.get(`http://3.36.91.138:80/board/${id}/previous`);
       setPrevPost(response.data);
     } catch (e) {
       console.error(e);
@@ -49,7 +42,7 @@ export default function BoardDetail() {
   //다음을 가져오는 get
   const fetchNextPost = async () => {
     try {
-      const response = await axios.get('http://3.36.91.138:80');
+      const response = await axios.get(`http://3.36.91.138:80/board/${id}/next`);
       setNextPost(response.data);
     } catch (e) {
       console.error(e);
@@ -78,6 +71,11 @@ export default function BoardDetail() {
   if (!post) {
     return <div>Loading...</div>;
   }
+
+  const formatDate = (dateArray) => {
+    const [year, month, day] = dateArray;
+    return `${year}.${month}.${day}`;
+  };
 
   const formattedDate = formatDate(post.createdAt);
   return (

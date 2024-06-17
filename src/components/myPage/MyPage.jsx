@@ -14,9 +14,10 @@ import axios from 'axios';
 export default function MyPage() {
   const nav = useNavigate();
   const [userData, setUserData] = useState('');
+  const userId = 1
 
   useEffect(() => {
-    axios.get('http://3.36.91.138:80').then(response => {
+    axios.get(`http://3.36.91.138:80/user/${userId}`).then(response => {
       setUserData(response.data[0]);
     })
       .catch(e => {

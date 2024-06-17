@@ -7,7 +7,7 @@ export default function Schedule({ selectedDate }) {
 
   //날짜별로 일정 조회하기
   useEffect(() => {
-    axios.get('http://3.36.91.138:80').then((response) => {
+    axios.get(`http://3.36.91.138:80/schedule/${selectedDate}`).then((response) => {
         setSchedules(response.data);
       })
       .catch((e) => {

@@ -21,7 +21,7 @@ export default function Post() {
       type: type
     }
     try {
-      const response = await axios.post('http://3.36.91.138:80', posted)
+      const response = await axios.post('http://3.36.91.138:80/board', posted)
       if (response.status === 201) {
         alert('게시되었습니다');
         nav('/board')

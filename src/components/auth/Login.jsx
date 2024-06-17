@@ -15,7 +15,7 @@ export default function Login() {
   const hanldeClickLoginBtn = async()=>{
     const logged = {email,password}
     try{
-      const response = await axios.post('http://localhost:8080/user/login',logged)
+      const response = await axios.post('http://3.36.91.138:80/user/login',logged)
       if(response.status === 200){
         alert('로그인 성공')
         navigate('/main')
