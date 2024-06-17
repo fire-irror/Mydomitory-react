@@ -94,14 +94,21 @@
 .b4,
 .b7,
 .b10{
-  top: 48.5vh;
+  top: 47.8vh;
+}
+
+.b1,
+.b4,
+.b7,
+.b10{
+  margin-left: 1vw;
 }
 
 .b2,
 .b5,
 .b8,
 .b11{
-  margin-left: 21.5vw;
+  margin-left: 21.8vw;
 }
 
 .b3,
@@ -114,19 +121,19 @@
 .b4,
 .b5,
 .b6{
-  top: 54.6vh;
+  top: 53.6vh;
 }
 
 .b7,
 .b8,
 .b9{
-  top: 60.8vh;
+  top: 59.5vh;
 }
 
 .b10,
 .b11,
 .b12{
-  top:66.5vh;
+  top:65.5vh;
 } 
 
 .reserved {
