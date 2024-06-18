@@ -52,6 +52,7 @@
   margin-top: 10%;
   background-color: #f1f0f0;
   border-top: 40px solid #F6EA85;
+  text-align: center;
 }
 
 .TodayTeacher,
@@ -70,20 +71,19 @@
   top: -5vh; 
 }
 
+
 .teacherImg,
 .cleanImg{
-  margin-left: 6vw;
+  margin-left: -15vw;
   margin-top: 1.2vh;
 }
 
 .TeacherA,
 .cleaningroom{
   font-weight: bold;
+  margin-top: 3vh;
 }
 
-.cleaningroom{
-  margin-left: 10vw;
-}
 
 .WrapCalendar{
   margin-top: 23.5vh;
