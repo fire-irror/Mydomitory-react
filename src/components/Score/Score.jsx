@@ -12,40 +12,45 @@ export default function Score() {
   const [filter, setFilter] = useState('all');
   const userId = 1;
 
-  //전체 상벌점 가져오기
+  const sortByDateDescending = (data) => {
+    return data.sort((a, b) => new Date(b.date) - new Date(a.date));
+  };
+
+  // Fetch all scores
   useEffect(() => {
     axios.get(`http://3.36.91.138:80/personal/${userId}`)
       .then(response => {
-        setPersonalScores(response.data);
+        setPersonalScores(sortByDateDescending(response.data));
       })
       .catch(e => {
         console.error(e);
       });
   }, [userId]);
 
-  //벌점 가져오기
+  // Fetch penalties
   useEffect(() => {
-    axios.get(`http://3.36.91.138:80/personal/penalties/${userId}`).then(response => {
-      setPenalties(response.data)
-    })
-      .catch(e => {
-        console.error(e)
+    axios.get(`http://3.36.91.138:80/personal/penalties/${userId}`)
+      .then(response => {
+        setPenalties(sortByDateDescending(response.data));
       })
+      .catch(e => {
+        console.error(e);
+      });
   }, [userId]);
 
-  //상점 가져오기
+  // Fetch awards
   useEffect(() => {
-    axios.get(`http://3.36.91.138:80/personal/award/${userId}`).then(response => {
-      setAward(response.data)
-    })
-      .catch(e => {
-        console.error(e)
+    axios.get(`http://3.36.91.138:80/personal/award/${userId}`)
+      .then(response => {
+        setAward(sortByDateDescending(response.data));
       })
+      .catch(e => {
+        console.error(e);
+      });
   }, [userId]);
 
-  // moment를 사용하여 날짜 포맷 변경
-  const formatDate = (dateString) => {
-    return moment(dateString).format("YYYY.MM.DD");
+  const formatDate = (date) => {
+    return moment(date).format("YYYY.MM.DD");
   };
 
   const renderHrWrap = () => {
