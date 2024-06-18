@@ -1,3 +1,8 @@
+.container{
+  overflow: auto;
+  margin-bottom: 5vh;
+}
+
 .btn {
   position: fixed;
   bottom: 8vh;  
@@ -57,4 +62,36 @@
 .content1{
   color: #BABABA;
   font-size: 13px;
+}
+
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3vh;
+  margin-bottom: 2vh;
+}
+
+.pagination ul {
+  display: flex;
+  list-style-type: none;
+  padding: 0;
+}
+
+
+.pagination a {
+  padding: 3vw;
+  color: #000;
+  text-decoration: none;
+}
+
+.activePage {
+  background-color: #ffe38e;
+  width: 6.5vw; 
+  height: 2.8vh; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5vh; 
 }

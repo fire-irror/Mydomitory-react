@@ -60,7 +60,6 @@ export default function Reservation() {
     try {
       const response = await axios.post('http://3.36.91.138:80/laundry', postData);
       if (response.status === 200) {
-        alert("성공");
         nav('/laundry');
       }
     } catch (e) {
