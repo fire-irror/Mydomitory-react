@@ -18,7 +18,7 @@ export default function Score() {
 
   // Fetch all scores
   useEffect(() => {
-    axios.get(`http://3.36.91.138:80/personal/${userId}`)
+    axios.get(`http://3.38.98.195:80/personal/${userId}`)
       .then(response => {
         setPersonalScores(sortByDateDescending(response.data));
       })
@@ -29,7 +29,7 @@ export default function Score() {
 
   // Fetch penalties
   useEffect(() => {
-    axios.get(`http://3.36.91.138:80/personal/penalties/${userId}`)
+    axios.get(`http://3.38.98.195:80/personal/penalties/${userId}`)
       .then(response => {
         setPenalties(sortByDateDescending(response.data));
       })
@@ -40,7 +40,7 @@ export default function Score() {
 
   // Fetch awards
   useEffect(() => {
-    axios.get(`http://3.36.91.138:80/personal/award/${userId}`)
+    axios.get(`http://3.38.98.195:80/personal/award/${userId}`)
       .then(response => {
         setAward(sortByDateDescending(response.data));
       })

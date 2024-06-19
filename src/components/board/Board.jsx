@@ -18,7 +18,7 @@ export default function Board() {
 
   const getPosts = async () => {
     try {
-      const response = await axios.get('http://3.36.91.138:80/board');
+      const response = await axios.get('http://3.38.98.195:80/board');
       const sortedPosts = response.data.sort((a, b) => b.id - a.id); // id 값을 역순으로 정렬
       const formattedPosts = sortedPosts.map(post => ({
         ...post,

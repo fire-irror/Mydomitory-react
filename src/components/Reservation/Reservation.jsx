@@ -15,7 +15,7 @@ export default function Reservation() {
   const nav = useNavigate();
 
   useEffect(() => {
-    axios.get(`http://3.36.91.138:80/user/${userId}`)
+    axios.get(`http://3.38.98.195:80/user/${userId}`)
       .then(response => {
         setUserData(response.data[0]);
       })
@@ -25,7 +25,7 @@ export default function Reservation() {
   }, [userId]);
 
   useEffect(() => {
-    axios.get('http://3.36.91.138:80/laundry')
+    axios.get('http://3.38.98.195:80/laundry')
       .then(response => {
         const reserved = response.data.map(reservation => reservation.washer_num);
         setReservedWashers(reserved);
@@ -58,7 +58,7 @@ export default function Reservation() {
     };
 
     try {
-      const response = await axios.post('http://3.36.91.138:80/laundry', postData);
+      const response = await axios.post('http://3.38.98.195:80/laundry', postData);
       if (response.status === 200) {
         nav('/laundry');
       }

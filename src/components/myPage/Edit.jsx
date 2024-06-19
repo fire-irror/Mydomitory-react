@@ -12,7 +12,7 @@ export default function Edit() {
   const userId = 1
 
   useEffect(() => {
-    axios.get(`http://3.36.91.138:80/user/${userId}`).then(response => {
+    axios.get(`http://3.38.98.195:80/user/${userId}`).then(response => {
       setUser(response.data[0])
     })
       .catch(e => {
