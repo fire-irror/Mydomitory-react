@@ -17,7 +17,6 @@ export default function Login() {
     try{
       const response = await axios.post('http://3.38.98.195:80/user/login',logged)
       if(response.status === 200){
-        alert('로그인 성공')
         navigate('/main')
       }
     }catch(err){
